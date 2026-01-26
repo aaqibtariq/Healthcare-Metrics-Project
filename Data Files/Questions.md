@@ -1,103 +1,27 @@
+
 # Staffing Metrics
-✅ Average nurse-to-patient ratio
 
-Status: ✅ YES (Strong, Core Metric)
+-  Average nurse-to-patient ratio by hospital and state (over time)
+(derived using total nursing hours and patient census)
 
-Why:
+-  Total hours worked by nurses per hospital, state, and time period (month/quarter)
+(RN, LPN, CNA combined and individually)
 
-You have total nursing hours (RN, LPN, CNA, etc.)
+-  Percentage of nurses working overtime (proxy-based)
+(using contract hours and admin hours as overtime pressure indicators)
 
-You have MDScensus (patient count proxy)
+# Facility Metrics
 
-You have hospital + state from ProviderInfo
+-  Comparison of staffing levels vs. patient load
+(identifies hospitals where staffing is misaligned with patient volume)
 
-✔ Can calculate by:
+-  Facilities with the lowest staffing levels compared to patient load
+(bottom-ranked hospitals based on staffing-to-census ratios)
 
-Hospital
+-  Top hospitals by patient throughput (proxy-based)
+(using cumulative patient census over time)
 
-State
+# Operational / Cost-Related Metrics
 
-Time (day / quarter)
-
-# Total hours worked by nurses
-
-Status: ✅ YES
-
-Why:
-
-All nurse hours are explicitly available
-
-Can aggregate by:
-
-Hospital
-
-State
-
-Month / Quarter (from WorkDate / CY_Qtr)
-
-✔ Very clean and defensible
-
-# Staffing levels vs patient load
-
-Status: ✅ YES (Very Strong)
-
-Why:
-
-Staffing hours ✅
-
-Patient census ✅
-
-✔ You can answer:
-
-“Which hospitals are under-staffed relative to patient load?”
-
-“Mismatch analysis”
-
-# Top 10 hospitals by patient throughput
-
-Status: ✅ YES (Proxy)
-
-Why:
-
-Use cumulative MDScensus over time
-
-Rank hospitals
-
-⚠️ Must clarify:
-
-“Throughput proxy using cumulative patient census”
-
-# Facilities with lowest staffing vs patient load
-
-Status: ✅ YES
-
-This naturally falls out of:
-
-Nurse-to-patient ratio
-
-Staffing vs census analysis
-
-# Ratio of permanent vs contract staff
-
-Status: ✅ YES (Strong)
-
-Why:
-
-Emp vs Ctr hours are clearly separated
-
-
-
-
-# Final Metrics Set
-
-Average nurse-to-patient ratio (hospital, state, time)
-
-Total nursing hours (RN/LPN/CNA) by hospital & state
-
-Staffing vs patient load mismatch index
-
-Contract vs employee staffing ratio
-
-Overtime pressure proxy (contract + admin hours)
-
-These directly answer your objective and management questions.
+-  Ratio of permanent staff to temporary/contract staff
+(employee vs. contract staffing mix)
