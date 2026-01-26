@@ -85,7 +85,6 @@ Why:
 
 Emp vs Ctr hours are clearly separated
 
-📌 This is excellent for cost + burnout discussion
 
 
 
