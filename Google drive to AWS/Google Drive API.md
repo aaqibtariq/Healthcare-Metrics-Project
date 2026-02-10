@@ -91,7 +91,10 @@ creds = flow.run_local_server(port=0, access_type="offline", prompt="consent")
 print("ACCESS TOKEN:", creds.token)
 print("REFRESH TOKEN:", creds.refresh_token)
 ```
--  This will open browser where you will sign in using your same test user email and authorize and get token
+-  Browser opens → log in to Google account
+-  Grant Drive access
+-  Copy the refresh_token printed
+-  This token is generated once and reused forever
   
 Note : prompt="consent"?
 
