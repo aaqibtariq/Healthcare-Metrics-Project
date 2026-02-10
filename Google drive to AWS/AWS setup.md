@@ -1,5 +1,5 @@
 
-# Step 1 Architecture
+# Architecture
 
 Google Drive → AWS Lambda (Python)
 -   reads credentials from AWS Secrets Manager
@@ -23,6 +23,9 @@ last run timestamp, and/or
 processed file IDs + modifiedTime
 
 Easiest reliable approach: S3 state file (state/drive_checkpoint.json)
+
+# Step 1 AWS Secret Manager
+
 
 
 # Step 2 - S3 Buckets 
@@ -91,7 +94,55 @@ Name - HealthcareDriveIngestionPolicy
 -  Click Next
 -  Attach HealthcareDriveIngestionPolicy 
 -  Role Name - HealthcareDriveIngestionLambdaRole
+-  Disciption: Execution role for Lambda that ingests files from Google Drive into S3
 -  Create Role
+
+# Step 4 - Lambda
+
+-  Lambda → Functions → Create function
+-  Name: healthcare-drive-to-s3-ingestion
+-  Runtime: Python 3.11
+-  Architecture: x86_64
+-  Select: Use an existing role - HealthcareDriveIngestionLambdaRole
+-  Click Create function
+
+## Add Environment Variables
+
+
+-  Go to: Configuration → Environment variables → Edit
+
+-  Add these:
+
+-  S3_BUCKET = { bucket name } 
+
+-  RAW_PREFIX = landing
+
+-  STATE_KEY = state/drive_checkpoint.json
+
+-  GOOGLE_SECRET_NAME = {name get it from Secret Manager}
+
+-  DRIVE_FOLDER_ID = <your Google Drive folder id>
+
+It will look like this:
+```
+https://drive.google.com/drive/folders/1AbCDefGhIJkLmNoPQRstuVWxYZ
+DRIVE_FOLDER_ID = 1AbCDefGhIJkLmNoPQRstuVWxYZ
+```
+
+-  ALLOWLIST = {list csv files like fileone.csv, filetwo.csv}
+
+-  Click Save.
+
+
+## Increase Timeout + Memory 
+
+-  Go to: Configuration → General configuration → Edit
+
+-  Timeout: 2 minutes (120 seconds)
+
+-  Memory: 512 MB (or 1024 MB if files are big)
+
+-  Click Save.
 
 
 
