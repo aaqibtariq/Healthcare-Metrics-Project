@@ -28,7 +28,15 @@ Easiest reliable approach: S3 state file (state/drive_checkpoint.json)
 
 - Open Secret Manager
 - Click store a new secret
-- 
+- Create a secret named: google/drive/Name
+- Secret value (JSON):
+```
+{
+  "client_id": "xxxxx.apps.googleusercontent.com",
+  "client_secret": "xxxxx",
+  "refresh_token": "xxxxx"
+}
+```
 
 # Step 2 - S3 Buckets 
 
