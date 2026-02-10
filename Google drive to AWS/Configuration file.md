@@ -2,9 +2,9 @@
 # Step 1 Architecture
 
 Google Drive → AWS Lambda (Python)
-↳ reads credentials from AWS Secrets Manager
-↳ writes files to Amazon S3 using AWS IAM role
-↳ maintains “what was already processed” using a state file in S3 (simple + serverless)
+-   reads credentials from AWS Secrets Manager
+-   writes files to Amazon S3 using AWS IAM role
+-   maintains “what was already processed” using a state file in S3 (simple + serverless)
 
 # Note
 
