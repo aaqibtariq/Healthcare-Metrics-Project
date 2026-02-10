@@ -26,7 +26,9 @@ Easiest reliable approach: S3 state file (state/drive_checkpoint.json)
 
 # Step 1 AWS Secret Manager
 
-
+- Open Secret Manager
+- Click store a new secret
+- 
 
 # Step 2 - S3 Buckets 
 
@@ -125,8 +127,8 @@ Name - HealthcareDriveIngestionPolicy
 
 It will look like this:
 ```
-https://drive.google.com/drive/folders/1AbCDefGhIJkLmNoPQRstuVWxYZ
-DRIVE_FOLDER_ID = 1AbCDefGhIJkLmNoPQRstuVWxYZ
+https://drive.google.com/drive/folders/1AbCDefGhIJkLmNoPQRstuVW
+DRIVE_FOLDER_ID = 1AbCDefGhIJkLmNoPQRstuVW
 ```
 
 -  ALLOWLIST = {list csv files like fileone.csv, filetwo.csv}
