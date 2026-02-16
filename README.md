@@ -1,5 +1,8 @@
 # Healthcare-Metrics-Project
 
+## Core Objective
+
+Build a unified analytics system to understand how nurse staffing, workload, and patient volumes impact care quality and operational efficiency across multiple hospital facilities.
 
 ## Project Goal
 
