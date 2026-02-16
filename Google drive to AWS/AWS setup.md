@@ -154,6 +154,37 @@ DRIVE_FOLDER_ID = 1AbCDefGhIJkLmNoPQRstuVW
 
 -  Click Save.
 
+## Upload Layer to Lambda
 
+https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/Google%20drive%20to%20AWS/google_layer.zip 
+
+-  Go to Lambda Console → Layers (left sidebar)
+-  Click Create layer
+Fill in:
+
+-  Name: google-drive-deps
+-  Upload: Choose google_layer.zip
+-  Compatible runtimes: Select Python 3.11
+-  Compatible architectures: Select x86_64
+-  Click Create
+
+##  Attach Layer to Your Function
+
+-  Go to your Lambda function
+-  Scroll down to Layers
+-  Click Add a layer
+-  Select Custom layers
+-  Choose google-drive-deps (version 1)
+-  Click Add
+
+## Test Code
+
+Add this test code 
+
+https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/Google%20drive%20to%20AWS/Lambda%20Test%20code.md
+
+- Click Deploy
+- Nothing is needed in test event connection you can just give it any name and put {} in Json
+- Click Test
 
 
