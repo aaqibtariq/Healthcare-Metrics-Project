@@ -2,10 +2,12 @@
 
 # QUESTIONS WE WILL ANSWER (3 of 4):
 
--  Staffing vs occupancy relationship
--  Facilities with highest overtime
--  Average staffing by state/type
--  Length of stay trends - Data doesn't exist
+-  What is the relationship between nurse staffing levels and hospital occupancy rates? -> Yes
+-  Which hospitals have the highest overtime hours for nurses? -> Yes
+-  What are the average staffing levels by state and hospital type? -> Yes
+-  What trends can you identify in patient length of stay over time? -> Data doesn't exist
+
+
 
 # METRICS WE WILL CALCULATE (5 Core):
 
