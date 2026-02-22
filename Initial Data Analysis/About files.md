@@ -2,7 +2,7 @@
 
 # QUESTIONS WE WILL ANSWER (3 of 4):
 
--  Confidence1Staffing vs occupancy relationship
+-  Staffing vs occupancy relationship
 -  Facilities with highest overtime
 -  Average staffing by state/type
 -  Length of stay trends - Data doesn't exist
