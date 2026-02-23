@@ -16,6 +16,7 @@ sqlNurse_to_Patient_Ratio = (Hrs_RN + Hrs_LPN + Hrs_CNA) / MDScensus
 GROUP BY PROVNUM (hospital), STATE
 ```
 Limitation:  No "department" data (nursing homes don't have hospital-style departments like ICU, ER, Med/Surg)
+
 Achievable: Hospital (Yes) | State (Yes) | Department (No)
 
 
