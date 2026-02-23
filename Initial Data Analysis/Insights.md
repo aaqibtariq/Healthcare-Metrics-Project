@@ -162,7 +162,8 @@ Status:  PARTIALLY (Hospital & State only, NOT diagnosis category)
 -  Measure 551: Number of hospitalizations per 1000 long-stay resident days
 
 ## Calculation:
-``
+
+```
 sqlSELECT PROVNUM, STATE, Adjusted_Score as Readmission_Rate
 FROM NH_QualityMsr_Claims
 WHERE Measure_Code IN (521, 551)
@@ -329,3 +330,17 @@ Achievable:  Fully answerable
 ## Q4: What trends can you identify in patient length of stay over time?
 Status:  NO (Data doesn't exist)
 
+
+## Core Files (Must Use):
+
+-  PBJ_Daily_Nurse_Staffing_Q2_2024.csv - Used in almost EVERY metric
+-  NH_ProviderInfo_Oct2024.csv - Master dimension, used frequently
+-  NH_QualityMsr_Claims_Oct2024.csv - For readmissions, quality
+-  FY_2024_SNF_VBP_Facility_Performance.csv - For VBP scores, readmissions
+-  NH_StateUSAverages_Oct2024.csv - For benchmarking
+
+Supporting Files:
+
+- NH_Penalties_Oct2024.csv - For cost/risk analysis
+- NH_SurveySummary_Oct2024.csv - For compliance metrics
+- NH_Ownership_Oct2024.csv - For ownership analysis
