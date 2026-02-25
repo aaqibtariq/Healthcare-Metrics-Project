@@ -90,3 +90,6 @@ https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/Google%20driv
 
 https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/Google%20drive%20to%20AWS/Results.md
 
+# Setup Event Processing
+
+https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/AWS-Snowflake%20Integration/Event%20Processing.md
