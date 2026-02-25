@@ -184,6 +184,8 @@ Track when the Lambda runs, even if no files are processed (for monitoring).
 
 Add this at the start of your Lambda handler
 
+```python
+
 def lambda_handler(event, context):
     # Generate execution ID
     execution_id = f"ingestion_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
@@ -253,3 +255,8 @@ def lambda_handler(event, context):
 - Verify execution tracking
 - DynamoDB → `healthcare_pipeline_execution_state` → Explore items
 - You should see execution records with status, timestamps, file counts
+
+
+Link after adjusting Lmabda Code
+
+https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/AWS-Snowflake%20Integration/Lambda%20Code.md
