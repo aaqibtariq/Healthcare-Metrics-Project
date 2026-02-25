@@ -91,6 +91,41 @@ creds = flow.run_local_server(port=0, access_type="offline", prompt="consent")
 print("ACCESS TOKEN:", creds.token)
 print("REFRESH TOKEN:", creds.refresh_token)
 ```
+
+or
+
+Create a file name - get_refresh_token.py
+Paste below code
+Run in powershell - python get_refresh_token.py
+Make sure you are in same directory where the file is located
+
+```python
+from google_auth_oauthlib.flow import InstalledAppFlow
+
+SCOPES = ['https://www.googleapis.com/auth/drive.readonly']
+
+flow = InstalledAppFlow.from_client_config(
+    {
+        "installed": {
+            "client_id": "YOUR_CLIENT_ID_HERE",
+            "client_secret": "YOUR_CLIENT_SECRET_HERE",
+            "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+            "token_uri": "https://oauth2.googleapis.com/token",
+            "redirect_uris": ["http://localhost"]
+        }
+    },
+    SCOPES
+)
+
+creds = flow.run_local_server(port=0, access_type='offline', prompt='consent')
+
+print('\n' + '='*50)
+print('COPY THIS REFRESH TOKEN:')
+print('='*50)
+print(creds.refresh_token)
+print('='*50)
+
+```
 -  Browser opens → log in to Google account
 -  Grant Drive access
 -  Copy the refresh_token printed
