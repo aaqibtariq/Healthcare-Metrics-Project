@@ -28,7 +28,7 @@ Easiest reliable approach: S3 state file (state/drive_checkpoint.json)
 
 - Open Secret Manager
 - Click store a new secret
-- Create a secret named: google/drive/Name
+- Create a secret named: google/drive/projectName
 - Secret value (JSON):
 ```
 {
