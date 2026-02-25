@@ -1,8 +1,8 @@
 
 ## Update Lambda Environment Variables
 
-- DDB_FILE_TABLE_NAME = os.environ.get("DDB_FILE_TABLE_NAME", "healthcare_file_ingestion_state")
-- DDB_EXEC_TABLE_NAME = os.environ.get("DDB_EXEC_TABLE_NAME", "healthcare_pipeline_execution_state")
+- DDB_FILE_TABLE_NAME = healthcare_file_ingestion_state
+- DDB_EXEC_TABLE_NAME = healthcare_pipeline_execution_state
 
 ## Updated Lambda Code 
 
