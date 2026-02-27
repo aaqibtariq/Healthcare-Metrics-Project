@@ -57,9 +57,9 @@ CREATE WAREHOUSE IF NOT EXISTS LOADING_WH
 
 Why X-SMALL?
 
-Data loading doesn't require much compute
-Cost-effective
-Can scale up if needed
+-       Data loading doesn't require much compute
+-       Cost-effective
+-       Can scale up if needed
 
 ```sql
   -- Warehouse for dbt transformations
@@ -73,9 +73,9 @@ CREATE WAREHOUSE IF NOT EXISTS TRANSFORM_WH
 
 Why SMALL?
 
-Transformations with joins and aggregations need more compute
-Still cost-effective
-5-minute auto-suspend for longer dbt runs
+-       Transformations with joins and aggregations need more compute
+-       Still cost-effective
+-       5-minute auto-suspend for longer dbt runs
 
 ```sql
   -- Warehouse for Streamlit dashboard queries
@@ -88,9 +88,9 @@ CREATE WAREHOUSE IF NOT EXISTS REPORTING_WH
 ```
 Why X-SMALL?
 
-Dashboard queries are typically simple SELECT statements
-Pre-aggregated data in Gold layer
-Cost-effective for end users
+-       Dashboard queries are typically simple SELECT statements
+-       Pre-aggregated data in Gold layer
+-       Cost-effective for end users
 
 
 ## Grant Warehouse Usage to Pipeline Role
