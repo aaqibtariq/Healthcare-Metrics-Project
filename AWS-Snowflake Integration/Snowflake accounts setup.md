@@ -53,6 +53,7 @@ CREATE WAREHOUSE IF NOT EXISTS LOADING_WH
   AUTO_RESUME = TRUE
   INITIALLY_SUSPENDED = TRUE
   COMMENT = 'Warehouse for loading data from S3';
+```
 
 Why X-SMALL?
 
@@ -60,7 +61,7 @@ Data loading doesn't require much compute
 Cost-effective
 Can scale up if needed
 
-
+```sql
   -- Warehouse for dbt transformations
 CREATE WAREHOUSE IF NOT EXISTS TRANSFORM_WH
   WAREHOUSE_SIZE = 'SMALL'
@@ -68,6 +69,7 @@ CREATE WAREHOUSE IF NOT EXISTS TRANSFORM_WH
   AUTO_RESUME = TRUE
   INITIALLY_SUSPENDED = TRUE
   COMMENT = 'Warehouse for dbt data transformations';
+```
 
 Why SMALL?
 
@@ -75,6 +77,7 @@ Transformations with joins and aggregations need more compute
 Still cost-effective
 5-minute auto-suspend for longer dbt runs
 
+```sql
   -- Warehouse for Streamlit dashboard queries
 CREATE WAREHOUSE IF NOT EXISTS REPORTING_WH
   WAREHOUSE_SIZE = 'X-SMALL'
@@ -82,14 +85,13 @@ CREATE WAREHOUSE IF NOT EXISTS REPORTING_WH
   AUTO_RESUME = TRUE
   INITIALLY_SUSPENDED = TRUE
   COMMENT = 'Warehouse for dashboard and reporting queries';
-
+```
 Why X-SMALL?
 
 Dashboard queries are typically simple SELECT statements
 Pre-aggregated data in Gold layer
 Cost-effective for end users
 
-```
 
 ## Grant Warehouse Usage to Pipeline Role
 
