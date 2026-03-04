@@ -93,3 +93,19 @@ https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/Google%20driv
 # Setup Event Processing
 
 https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/AWS-Snowflake%20Integration/Event%20Processing.md
+
+# Setup DnamoDB
+
+https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/AWS-Snowflake%20Integration/DynamoDB.md
+
+# Updated Lambda code
+
+https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/AWS-Snowflake%20Integration/Lambda%20Code.md
+
+# setup Snowflake account
+
+https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/AWS-Snowflake%20Integration/Snowflake%20accounts%20setup.md
+
+# Snowflake and S3 Integration 
+
+https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/AWS-Snowflake%20Integration/Snowflake%20and%20AWS%20setup.md
