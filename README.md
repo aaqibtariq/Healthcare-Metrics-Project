@@ -109,3 +109,7 @@ https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/AWS-Snowflake
 # Snowflake and S3 Integration 
 
 https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/AWS-Snowflake%20Integration/Snowflake%20and%20AWS%20setup.md
+
+# Table Creation in Snowflake 
+
+https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/AWS-Snowflake%20Integration/snowflake%20tables%20creation.md
