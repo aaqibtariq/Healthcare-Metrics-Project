@@ -151,7 +151,7 @@ SHOW PIPES IN SCHEMA RAW.HEALTHCARE;
 
 - **Event name:** `snowpipe-auto-ingest`
 - **Event types:**
-  - ✅ Check: **All object create events** (s3:ObjectCreated:*)
+  -  Check: **All object create events** (s3:ObjectCreated:*)
 - **Prefix (optional):** `landing/google_drive/`
 - **Suffix (optional):** `.csv`
 - **Destination:**
@@ -164,6 +164,65 @@ SHOW PIPES IN SCHEMA RAW.HEALTHCARE;
 ```
   arn:aws:sqs:us-east-1:123456789012:sf-snowpipe-AIDAI5Q6...
 ```
+## STEP 6.18: STORE SNOWFLAKE CREDENTIALS IN AWS SECRETS MANAGER
+
+### Create the Secret in AWS Console
+
+- Go to AWS Secrets Manager:
+- Open AWS Console
+- Search for "Secrets Manager"
+- Click "Store a new secret"
+
+- Configure Secret Type
+ - Step 1: Choose secret type
+ - Select: "Other type of secret"
+ - Click "Key/value" tab
+
+```
+Enter these key-value pairs:
+Key                  Value
+account            Your Snowflake account
+user               HEALTHCARE_PIPELINE_USER
+Rpassword              Your user password
+warehouse               LOADING_WH
+database                 RAW
+schema                HEALTHCAREHEALTHCARE
+role                  HEALTHCARE_PIPELINE_ROLE
+
+Or use JSON format (click "Plaintext" tab):
+json{
+  "account": "ABC12345.us-east-1.aws",
+  "user": "HEALTHCARE_PIPELINE_USER",
+  "password": "YOUR_SECURE_PASSWORD_HERE",
+  "warehouse": "LOADING_WH",
+  "database": "RAW",
+  "schema": "HEALTHCARE",
+  "role": "HEALTHCARE_PIPELINE_ROLE"
+}
+
+```
+** IMPORTANT: Replace with your actual values! **
+
+ - Name the Secret
+   - Step 2: Configure secret
+
+- Secret name: snowflake/healthcare/credentials
+- Description: Snowflake credentials for healthcare data pipeline
+- Encryption key: Default (AWS managed key)
+
+- Click Next
+
+- Configure Rotation (Optional)
+ - Step 3: Configure rotation
+
+- Disable automatic rotation (for now)
+- Click Next
+- Review and Store
+-  Review
+
+- Review all settings
+- Click Store
+
 
 ## Testing if you want to check all Pipe line ( not recommanded manually)
 
