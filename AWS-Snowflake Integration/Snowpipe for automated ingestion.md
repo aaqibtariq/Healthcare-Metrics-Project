@@ -1,4 +1,4 @@
-# Configure S3 Event Notification
+# Pipe Creation and Configure S3 Event Notification
 
 ```sql
 
