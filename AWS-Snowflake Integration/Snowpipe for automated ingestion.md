@@ -226,9 +226,11 @@ json{
 
 ## Testing if you want to check all Pipe line ( not recommanded manually)
 
+## PBJ_STAFFING_PIPE
+
 ```sql
 
-# Use aws cmd
+
 # Copy existing file to new partition
 aws s3 cp \
   s3://healthcare-metrics-project-at/landing/google_drive/load_dt=2026-02-25/PBJ_Daily_Nurse_Staffing_Q2_2024.csv \
@@ -246,5 +248,175 @@ FROM TABLE(INFORMATION_SCHEMA.COPY_HISTORY(
     TABLE_NAME => 'PBJ_STAFFING',
     START_TIME => DATEADD(hours, -1, CURRENT_TIMESTAMP())
 ));
+
+```
+
+
+##  VBP_PERFORMANCE
+
+```sql
+
+# Use aws cmd
+
+aws s3 cp \
+s3://healthcare-metrics-project-at/landing/google_drive/load_dt=2026-02-25/FY_2024_SNF_VBP_Facility_Performance.csv \
+s3://healthcare-metrics-project-at/landing/google_drive/load_dt=2026-03-05/FY_2024_SNF_VBP_Facility_Performance.csv
+
+
+-- Refresh pipe manually (loads any files it missed)
+ALTER PIPE VBP_PERFORMANCE_PIPE REFRESH;
+
+-- Check pipe status
+SELECT SYSTEM$PIPE_STATUS('VBP_PERFORMANCE_PIPE');
+
+-- View pipe history
+SELECT *
+FROM TABLE(INFORMATION_SCHEMA.COPY_HISTORY(
+    TABLE_NAME => 'VBP_PERFORMANCE',
+    START_TIME => DATEADD(hours, -1, CURRENT_TIMESTAMP())
+```
+
+## STATE_AVERAGES
+
+```sql
+# Use aws cmd
+
+aws s3 cp \
+s3://healthcare-metrics-project-at/landing/google_drive/load_dt=2026-02-25/NH_StateUSAverages_Oct2024.csv \
+s3://healthcare-metrics-project-at/landing/google_drive/load_dt=2026-03-05/NH_StateUSAverages_Oct2024.csv
+
+
+-- Refresh pipe manually (loads any files it missed)
+ALTER PIPE STATE_AVERAGES_PIPE REFRESH;
+
+-- Check pipe status
+SELECT SYSTEM$PIPE_STATUS('STATE_AVERAGES_PIPE');
+
+-- View pipe history
+SELECT *
+FROM TABLE(INFORMATION_SCHEMA.COPY_HISTORY(
+    TABLE_NAME => 'STATE_AVERAGES',
+    START_TIME => DATEADD(hours, -1, CURRENT_TIMESTAMP())
+
+```
+
+## QUALITY_CLAIMS
+
+```sql
+# Use aws cmd
+
+aws s3 cp \
+s3://healthcare-metrics-project-at/landing/google_drive/load_dt=2026-02-25/NH_Penalties_Oct2024.csv \
+s3://healthcare-metrics-project-at/landing/google_drive/load_dt=2026-03-05/NH_Penalties_Oct2024.csv
+
+
+
+-- Refresh pipe manually (loads any files it missed)
+ALTER PIPE QUALITY_CLAIMS_PIPE REFRESH;
+
+-- Check pipe status
+SELECT SYSTEM$PIPE_STATUS('QUALITY_CLAIMS_PIPE');
+
+-- View pipe history
+SELECT *
+FROM TABLE(INFORMATION_SCHEMA.COPY_HISTORY(
+    TABLE_NAME => 'QUALITY_CLAIMS',
+    START_TIME => DATEADD(hours, -1, CURRENT_TIMESTAMP())
+
+```
+
+
+## PENALTIES
+
+```sql
+# Use aws cmd
+
+aws s3 cp \
+s3://healthcare-metrics-project-at/landing/google_drive/load_dt=2026-02-25/NH_Penalties_Oct2024.csv \
+s3://healthcare-metrics-project-at/landing/google_drive/load_dt=2026-03-05/NH_Penalties_Oct2024.csv
+
+
+-- Refresh pipe manually (loads any files it missed)
+ALTER PIPE PENALTIES_PIPE REFRESH;
+
+-- Check pipe status
+SELECT SYSTEM$PIPE_STATUS('PENALTIES_PIPE');
+
+-- View pipe history
+SELECT *
+FROM TABLE(INFORMATION_SCHEMA.COPY_HISTORY(
+    TABLE_NAME => 'PENALTIES',
+    START_TIME => DATEADD(hours, -1, CURRENT_TIMESTAMP())
+
+```
+
+## PROVIDER_INFO
+
+```sql
+# Use aws cmd
+
+aws s3 cp \
+s3://healthcare-metrics-project-at/landing/google_drive/load_dt=2026-02-25/NH_ProviderInfo_Oct2024.csv \
+s3://healthcare-metrics-project-at/landing/google_drive/load_dt=2026-03-05/NH_ProviderInfo_Oct2024.csv
+
+-- Refresh pipe manually (loads any files it missed)
+ALTER PIPE PROVIDER_INFO_PIPE REFRESH;
+
+-- Check pipe status
+SELECT SYSTEM$PIPE_STATUS('PROVIDER_INFO_PIPE');
+
+-- View pipe history
+SELECT *
+FROM TABLE(INFORMATION_SCHEMA.COPY_HISTORY(
+    TABLE_NAME => 'PROVIDER_INFO',
+    START_TIME => DATEADD(hours, -1, CURRENT_TIMESTAMP())
+
+```
+
+
+## SURVEY_SUMMARY
+
+```sql
+# Use aws cmd
+
+aws s3 cp \
+s3://healthcare-metrics-project-at/landing/google_drive/load_dt=2026-02-25/NH_SurveySummary_Oct2024.csv \
+s3://healthcare-metrics-project-at/landing/google_drive/load_dt=2026-03-05/NH_SurveySummary_Oct2024.csv
+
+-- Refresh pipe manually (loads any files it missed)
+ALTER PIPE SURVEY_SUMMARY_PIPE REFRESH;
+
+-- Check pipe status
+SELECT SYSTEM$PIPE_STATUS('SURVEY_SUMMARY_PIPE');
+
+-- View pipe history
+SELECT *
+FROM TABLE(INFORMATION_SCHEMA.COPY_HISTORY(
+    TABLE_NAME => 'SURVEY_SUMMARY',
+    START_TIME => DATEADD(hours, -1, CURRENT_TIMESTAMP())
+
+```
+
+
+## OWNERSHIP
+
+```sql
+# Use aws cmd
+
+aws s3 cp \
+s3://healthcare-metrics-project-at/landing/google_drive/load_dt=2026-02-25/NH_Ownership_Oct2024.csv \
+s3://healthcare-metrics-project-at/landing/google_drive/load_dt=2026-03-05/NH_Ownership_Oct2024.csv
+
+-- Refresh pipe manually (loads any files it missed)
+ALTER PIPE OWNERSHIP_PIPE REFRESH;
+
+-- Check pipe status
+SELECT SYSTEM$PIPE_STATUS('OWNERSHIP_PIPE');
+
+-- View pipe history
+SELECT *
+FROM TABLE(INFORMATION_SCHEMA.COPY_HISTORY(
+    TABLE_NAME => 'OWNERSHIP',
+    START_TIME => DATEADD(hours, -1, CURRENT_TIMESTAMP())
 
 ```
