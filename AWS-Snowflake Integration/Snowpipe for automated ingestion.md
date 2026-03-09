@@ -224,6 +224,88 @@ json{
 - Click Store
 
 
+## UPDATE LAMBDA IAM ROLE
+
+Now update your Lambda role to access this secret.
+
+- Go to IAM Console
+- Click Roles
+- Find role: HealthcareDriveIngestionLambdaRole
+- Click Add permissions → Create inline policy
+- Click JSON tab
+- Paste this policy:
+
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "secretsmanager:GetSecretValue",
+                "secretsmanager:DescribeSecret"
+            ],
+            "Resource": [
+                "arn:aws:secretsmanager:us-east-1:YOUR_ACCOUNT_ID:secret:snowflake/healthcare/credentials-*"
+            ]
+        }
+    ]
+}
+
+```
+Replace YOUR_ACCOUNT_ID with your actual AWS account ID!
+
+- Click Next
+- Policy name: SnowflakeSecretsManagerAccess
+- Click Create policy
+
+### connection test
+
+```sql
+
+import json
+import boto3
+
+def lambda_handler(event, context):
+    """
+    Test Secrets Manager access only (no Snowflake connection)
+    """
+    secrets_client = boto3.client('secretsmanager')
+    
+    try:
+        # Retrieve the secret
+        response = secrets_client.get_secret_value(
+            SecretId='snowflake/healthcare/credentials'
+        )
+        
+        # Parse the secret
+        secret = json.loads(response['SecretString'])
+        
+        # Return success (without exposing password)
+        return {
+            'statusCode': 200,
+            'body': json.dumps({
+                'message':  Secret retrieved successfully!',
+                'account': secret.get('account'),
+                'user': secret.get('user'),
+                'database': secret.get('database'),
+                'schema': secret.get('schema'),
+                'warehouse': secret.get('warehouse'),
+                'role': secret.get('role'),
+                'has_password': 'password' in secret
+            })
+        }
+        
+    except Exception as e:
+        return {
+            'statusCode': 500,
+            'body': json.dumps({
+                'error': str(e),
+                'message': 'Failed to retrieve secret from Secrets Manager'
+            })
+        }
+
+```
 ## Testing if you want to check all Pipe line ( not recommanded manually)
 
 ## PBJ_STAFFING_PIPE
