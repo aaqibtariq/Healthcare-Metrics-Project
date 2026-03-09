@@ -113,3 +113,7 @@ https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/AWS-Snowflake
 # Table Creation in Snowflake 
 
 https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/AWS-Snowflake%20Integration/snowflake%20tables%20creation.md
+
+# Pipe Creation 
+
+https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/AWS-Snowflake%20Integration/Snowpipe%20for%20automated%20ingestion.md
