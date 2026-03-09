@@ -472,7 +472,7 @@ COPY INTO QUALITY_CLAIMS (
 FROM (
     SELECT 
         $1, $2, $3, $4, $5, $6, $7, $8, $9, $10,
-        $11, $12, $13, $14, $15, $16, $17,
+        $11, $12, $13, $14, $15, $16, TRY_TO_DATE($17, 'YYYY-MM-DD'),
         METADATA$FILENAME,
         TO_VARCHAR(CONCAT(METADATA$FILENAME,'_',METADATA$FILE_ROW_NUMBER))
     FROM @HEALTHCARE_S3_STAGE/
@@ -572,8 +572,19 @@ COPY INTO PENALTIES (
 )
 FROM (
     SELECT 
-        $1, $2, $3, $4, $5, $6, $7, $8, $9, $10,
-        $11, $12, $13,
+        $1,                                  -- CCN
+        $2,                                  -- Provider Name
+        $3,                                  -- Provider Address
+        $4,                                  -- City
+        $5,                                  -- State
+        $6,                                  -- Zip
+        TRY_TO_DATE($7,  'YYYY-MM-DD'),      --  Penalty Date
+        $8,                                  -- Penalty Type
+        TRY_TO_NUMBER($9,  38, 2),           -- Fine Amount
+        TRY_TO_DATE($10, 'YYYY-MM-DD'),      --  Payment Denial Start Date
+        TRY_TO_NUMBER($11),                  -- Payment Denial Length in Days
+        $12,                                 -- Location
+        TRY_TO_DATE($13, 'YYYY-MM-DD'),      --  Processing Date
         METADATA$FILENAME,
         TO_VARCHAR(CONCAT(METADATA$FILENAME,'_',METADATA$FILE_ROW_NUMBER))
     FROM @HEALTHCARE_S3_STAGE/
@@ -908,16 +919,16 @@ FROM (
     SELECT 
         -- All 103 columns using positional notation
         $1, $2, $3, $4, $5, $6, $7, $8, $9, $10,
-        $11, $12, $13, $14, $15, $16, $17, $18, $19, $20,
+        $11, $12, $13, $14, $15, $16, TRY_TO_DATE($17, 'YYYY-MM-DD'), $18, $19, $20,
         $21, $22, $23, $24, $25, $26, $27, $28, $29, $30,
         $31, $32, $33, $34, $35, $36, $37, $38, $39, $40,
         $41, $42, $43, $44, $45, $46, $47, $48, $49, $50,
         $51, $52, $53, $54, $55, $56, $57, $58, $59, $60,
-        $61, $62, $63, $64, $65, $66, $67, $68, $69, $70,
-        $71, $72, $73, $74, $75, $76, $77, $78, $79, $80,
-        $81, $82, $83, $84, $85, $86, $87, $88, $89, $90,
+        $61, $62, $63, $64, $65, $66, TRY_TO_DATE($67, 'YYYY-MM-DD'), $68, $69, $70,
+        $71, $72, $73, $74, TRY_TO_DATE($75, 'YYYY-MM-DD'), $76, $77, $78, $79, $80,
+        $81, $82, TRY_TO_DATE($83, 'YYYY-MM-DD'), $84, $85, $86, $87, $88, $89, $90,
         $91, $92, $93, $94, $95, $96, $97, $98, $99, $100,
-        $101, $102, $103,
+        $101, $102,  TRY_TO_DATE($103, 'YYYY-MM-DD'),
         -- Metadata
         METADATA$FILENAME,
         TO_VARCHAR(CONCAT(METADATA$FILENAME,'_',METADATA$FILE_ROW_NUMBER))
@@ -1092,11 +1103,24 @@ COPY INTO SURVEY_SUMMARY (
 FROM (
     SELECT 
         -- All 41 columns using positional notation
-        $1, $2, $3, $4, $5, $6, $7, $8, $9, $10,
-        $11, $12, $13, $14, $15, $16, $17, $18, $19, $20,
-        $21, $22, $23, $24, $25, $26, $27, $28, $29, $30,
-        $31, $32, $33, $34, $35, $36, $37, $38, $39, $40,
-        $41,
+               $1, $2, $3, $4, $5, $6,
+        TRY_TO_NUMBER($7),                          -- INSPECTION_CYCLE
+        TRY_TO_DATE($8,  'YYYY-MM-DD'),             --  HEALTH_SURVEY_DATE
+        TRY_TO_DATE($9,  'YYYY-MM-DD'),             --  FIRE_SAFETY_SURVEY_DATE
+        TRY_TO_NUMBER($10),                         -- TOTAL_NUMBER_OF_HEALTH_DEFICIENCIES
+        TRY_TO_NUMBER($11),                         -- TOTAL_NUMBER_OF_FIRE_SAFETY_DEFICIENCIES
+
+        TRY_TO_NUMBER($12), TRY_TO_NUMBER($13), TRY_TO_NUMBER($14), TRY_TO_NUMBER($15), TRY_TO_NUMBER($16),
+        TRY_TO_NUMBER($17), TRY_TO_NUMBER($18), TRY_TO_NUMBER($19), TRY_TO_NUMBER($20), TRY_TO_NUMBER($21),
+        TRY_TO_NUMBER($22),
+
+        TRY_TO_NUMBER($23), TRY_TO_NUMBER($24), TRY_TO_NUMBER($25), TRY_TO_NUMBER($26), TRY_TO_NUMBER($27),
+        TRY_TO_NUMBER($28), TRY_TO_NUMBER($29), TRY_TO_NUMBER($30), TRY_TO_NUMBER($31), TRY_TO_NUMBER($32),
+        TRY_TO_NUMBER($33), TRY_TO_NUMBER($34), TRY_TO_NUMBER($35), TRY_TO_NUMBER($36), TRY_TO_NUMBER($37),
+        TRY_TO_NUMBER($38), TRY_TO_NUMBER($39),
+
+        $40,                                         -- LOCATION
+        TRY_TO_DATE($41, 'YYYY-MM-DD'),  
         -- Metadata
         METADATA$FILENAME,
         TO_VARCHAR(CONCAT(METADATA$FILENAME,'_',METADATA$FILE_ROW_NUMBER))
@@ -1250,7 +1274,7 @@ COPY INTO OWNERSHIP (
 FROM (
     SELECT 
         $1, $2, $3, $4, $5, $6, $7, $8, $9, $10,
-        $11, $12, $13,
+        $11, $12, TRY_TO_DATE($13, 'YYYY-MM-DD'),
         METADATA$FILENAME,
         TO_VARCHAR(CONCAT(METADATA$FILENAME,'_',METADATA$FILE_ROW_NUMBER))
     FROM @HEALTHCARE_S3_STAGE/
