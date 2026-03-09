@@ -138,3 +138,54 @@ SHOW PIPES IN SCHEMA RAW.HEALTHCARE;
 
 ```
 
+## - Configure S3 Event Notification
+
+**Go to AWS S3 Console:**
+
+1. Open bucket: `healthcare-metrics-project-at`
+2. Go to **Properties** tab
+3. Scroll to **Event notifications** section
+4. Click **Create event notification**
+
+**Configuration:**
+
+- **Event name:** `snowpipe-auto-ingest`
+- **Event types:**
+  - ✅ Check: **All object create events** (s3:ObjectCreated:*)
+- **Prefix (optional):** `landing/google_drive/`
+- **Suffix (optional):** `.csv`
+- **Destination:**
+  - Select: **SQS queue**
+  - Select: **Enter SQS queue ARN**
+  - **Paste the SQS ARN from Snowflake** (from DESC PIPE output)
+  - Click Save
+  
+  Example:
+```
+  arn:aws:sqs:us-east-1:123456789012:sf-snowpipe-AIDAI5Q6...
+```
+
+## Testing if you want to check all Pipe line ( not recommanded manually)
+
+```sql
+
+# Use aws cmd
+# Copy existing file to new partition
+aws s3 cp \
+  s3://healthcare-metrics-project-at/landing/google_drive/load_dt=2026-02-25/PBJ_Daily_Nurse_Staffing_Q2_2024.csv \
+  s3://healthcare-metrics-project-at/landing/google_drive/load_dt=2026-03-05/PBJ_Daily_Nurse_Staffing_Q2_2024.csv
+
+-- Refresh pipe manually (loads any files it missed)
+ALTER PIPE PBJ_STAFFING_PIPE REFRESH;
+
+-- Check pipe status
+SELECT SYSTEM$PIPE_STATUS('PBJ_STAFFING_PIPE');
+
+-- View pipe history
+SELECT *
+FROM TABLE(INFORMATION_SCHEMA.COPY_HISTORY(
+    TABLE_NAME => 'PBJ_STAFFING',
+    START_TIME => DATEADD(hours, -1, CURRENT_TIMESTAMP())
+));
+
+```
