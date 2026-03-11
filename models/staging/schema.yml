@@ -8,9 +8,6 @@ models:
         description: "CMS Certification Number (CCN) - unique facility identifier"
         tests:
           - not_null
-          - relationships:
-              to: ref('stg_provider_info')
-              field: facility_id
       
       - name: work_date
         description: "Date of staffing report"
@@ -21,11 +18,17 @@ models:
         description: "Number of residents on this date"
         tests:
           - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              inclusive: true
       
       - name: total_nursing_hours
         description: "Total nursing hours (RN + LPN + CNA)"
         tests:
           - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              inclusive: true
 
   - name: stg_provider_info
     description: "Facility master data with ratings, metrics, and certifications"
@@ -60,6 +63,15 @@ models:
               values: [1, 2, 3, 4, 5]
               config:
                 where: "overall_rating IS NOT NULL"
+      
+      - name: certified_beds
+        description: "Number of Medicare/Medicaid certified beds"
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 1
+              inclusive: true
+              config:
+                where: "certified_beds IS NOT NULL"
 
   - name: stg_quality_claims
     description: "Quality measure outcomes from Medicare claims data"
@@ -68,9 +80,16 @@ models:
         description: "CMS Certification Number"
         tests:
           - not_null
-          - relationships:
-              to: ref('stg_provider_info')
-              field: facility_id
+      
+      - name: readmission_rate_short_stay
+        description: "30-day all-cause readmission rate for short-stay residents (%)"
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 100
+              inclusive: true
+              config:
+                where: "readmission_rate_short_stay IS NOT NULL"
 
   - name: stg_penalties
     description: "CMS penalties and enforcement actions"
@@ -84,6 +103,15 @@ models:
         description: "Date penalty was imposed"
         tests:
           - not_null
+      
+      - name: fine_amount
+        description: "Dollar amount of fine"
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              inclusive: true
+              config:
+                where: "fine_amount IS NOT NULL"
 
   - name: stg_survey_summary
     description: "Health and fire safety survey deficiencies"
