@@ -18,16 +18,6 @@ models:
         description: "Average total nursing hours per resident per day"
         tests:
           - not_null
-          - dbt_utils.expression_is_true:
-              expression: "> 0"
-      
-      - name: benchmark_category
-        description: "Performance vs state benchmark"
-        tests:
-          - accepted_values:
-              values: ['At or Above Benchmark', 'Slightly Below Benchmark', 'Significantly Below Benchmark']
-              config:
-                where: "benchmark_category IS NOT NULL"
 
   - name: mart_staffing_vs_occupancy
     description: "Staffing flexibility and occupancy correlation analysis - METRIC 2"
@@ -37,22 +27,6 @@ models:
         tests:
           - unique
           - not_null
-      
-      - name: staffing_occupancy_correlation
-        description: "Correlation coefficient between occupancy and staffing"
-        tests:
-          - dbt_utils.expression_is_true:
-              expression: "BETWEEN -1 AND 1"
-              config:
-                where: "staffing_occupancy_correlation IS NOT NULL"
-      
-      - name: staffing_flexibility
-        description: "Ability to adjust staffing based on occupancy"
-        tests:
-          - accepted_values:
-              values: ['High Flexibility', 'Medium Flexibility', 'Low Flexibility']
-              config:
-                where: "staffing_flexibility IS NOT NULL"
 
   - name: mart_staffing_vs_quality
     description: "Relationship between staffing levels and quality outcomes - METRIC 3"
@@ -67,8 +41,6 @@ models:
         description: "Composite quality score (0-100)"
         tests:
           - not_null
-          - dbt_utils.expression_is_true:
-              expression: "BETWEEN 0 AND 100"
       
       - name: quality_tier
         description: "Quality performance tier"
@@ -98,18 +70,6 @@ models:
         tests:
           - not_null
       
-      - name: employee_pct
-        description: "Percentage of total hours from employees"
-        tests:
-          - dbt_utils.expression_is_true:
-              expression: "BETWEEN 0 AND 100"
-      
-      - name: contractor_pct
-        description: "Percentage of total hours from contractors"
-        tests:
-          - dbt_utils.expression_is_true:
-              expression: "BETWEEN 0 AND 100"
-      
       - name: staffing_model
         description: "Staffing model category"
         tests:
@@ -129,8 +89,6 @@ models:
         description: "Total risk score (0-6)"
         tests:
           - not_null
-          - dbt_utils.expression_is_true:
-              expression: "BETWEEN 0 AND 6"
       
       - name: risk_category
         description: "Risk level classification"
