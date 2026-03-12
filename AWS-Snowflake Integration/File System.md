@@ -1,0 +1,52 @@
+
+
+```sql
+CREATE OR REPLACE FILE FORMAT Healthcare_PBJ_Format
+  TYPE = 'CSV'
+  FIELD_DELIMITER = ','
+  SKIP_HEADER = 1
+  FIELD_OPTIONALLY_ENCLOSED_BY = '"'
+  TRIM_SPACE = TRUE
+  ERROR_ON_COLUMN_COUNT_MISMATCH = FALSE
+  NULL_IF = ('NULL', 'null', '', 'NA', 'N/A', '---')
+  DATE_FORMAT = 'YYYYMMDD'           --  Specific for PBJ files
+  TIMESTAMP_FORMAT = 'AUTO'
+  ENCODING = 'UTF8'
+  REPLACE_INVALID_CHARACTERS = TRUE
+  COMMENT = 'File format for PBJ daily staffing files with YYYYMMDD dates';
+
+```
+
+
+```sql
+CREATE OR REPLACE FILE FORMAT Healthcare_General_Format
+  TYPE = 'CSV'
+  PARSE_HEADER = TRUE                    --  This automatically skips header
+  FIELD_DELIMITER = ','
+  FIELD_OPTIONALLY_ENCLOSED_BY = '"'
+  TRIM_SPACE = TRUE
+  ERROR_ON_COLUMN_COUNT_MISMATCH = FALSE
+  NULL_IF = ('NULL', 'null', '', 'NA', 'N/A', '---')
+  DATE_FORMAT = 'YYYY-MM-DD'               --  Auto-detects MM/DD/YYYY, YYYY-MM-DD, etc.
+  TIMESTAMP_FORMAT = 'AUTO'
+  ENCODING = 'UTF8'
+  REPLACE_INVALID_CHARACTERS = TRUE;
+
+```
+
+
+```sql
+  CREATE OR REPLACE FILE FORMAT VBP_format
+  TYPE = 'CSV'
+  SKIP_HEADER = 1
+  FIELD_DELIMITER = ','
+  FIELD_OPTIONALLY_ENCLOSED_BY = '"'
+  TRIM_SPACE = TRUE
+  ERROR_ON_COLUMN_COUNT_MISMATCH = FALSE
+  NULL_IF = ('NULL', 'null', '', 'NA', 'N/A', '---')
+DATE_FORMAT = 'AUTO'
+TIMESTAMP_FORMAT = 'AUTO'
+  ENCODING = 'UTF8'
+  REPLACE_INVALID_CHARACTERS = TRUE;
+
+```
