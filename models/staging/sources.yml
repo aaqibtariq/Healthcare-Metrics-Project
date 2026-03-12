@@ -1,0 +1,32 @@
+version: 2
+
+sources:
+  - name: raw
+    database: raw
+    schema: healthcare
+    description: "Raw data loaded from S3 via Snowpipe"
+    
+    tables:
+      - name: pbj_staffing
+        description: "Daily staffing data from PBJ (Payroll-Based Journal)"
+        
+      - name: provider_info
+        description: "Facility master data with ratings and metrics"
+        
+      - name: quality_claims
+        description: "Quality measure claims data (readmissions, ED visits)"
+        
+      - name: penalties
+        description: "Facility penalties and fines"
+        
+      - name: survey_summary
+        description: "Survey deficiencies by inspection cycle"
+        
+      - name: vbp_performance
+        description: "Value-Based Purchasing program performance"
+        
+      - name: state_averages
+        description: "State and national benchmark averages"
+        
+      - name: ownership
+        description: "Facility ownership information"
