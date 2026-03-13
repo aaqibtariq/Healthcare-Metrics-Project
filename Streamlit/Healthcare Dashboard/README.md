@@ -186,14 +186,6 @@ For issues or questions:
 
 Internal use only - Healthcare Analytics Project
 
-## 🎯 Next Steps
 
-1. **Customize visualizations** - Modify chart types and colors
-2. **Add new pages** - Create additional analysis views
-3. **Enhance filters** - Add more interactive controls
-4. **Schedule reports** - Set up automated email reports
-5. **Add ML insights** - Integrate predictive analytics
-
----
 
 Built with ❤️ using Streamlit, Snowflake, and dbt
