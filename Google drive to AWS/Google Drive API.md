@@ -67,6 +67,10 @@ Lambda cannot use API keys — OAuth is required.
 -  Under Test users - Add your gmail
 
 # Step 6 Generate a Refresh Token One time process
+ Install Required Packages
+```python
+pip install google-auth-oauthlib google-auth google-api-python-client
+```
 
 -  Run this once on your local machine
 
