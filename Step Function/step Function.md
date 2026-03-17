@@ -645,6 +645,10 @@ Template:
 
 ```
 
+Role Amazon_EventBridge_Invoke_StepFunctions_1100829925 - it has policy to execute step_funnction 
+
+
+
 - 6. **Save changes**
  
  ### TEST THE STATE MACHINE MANUALLY
