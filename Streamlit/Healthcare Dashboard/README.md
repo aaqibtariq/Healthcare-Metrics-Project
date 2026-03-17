@@ -171,33 +171,70 @@ All data comes from dbt marts in Snowflake:
 
 Data is cached for 10 minutes to optimize performance.
 
-## 🚀 Deployment
+🏠 Home Page - PERFECT!
 
-### Streamlit Cloud
+✅ 14,814 Total Facilities
+✅ 1,534 Critical Risk (38.1% - wow, that's significant!)
+✅ 5,185 High Quality (35% - great!)
+✅ 3.84 Avg Nursing HPRD
+✅ Beautiful risk distribution pie chart
+✅ Quality tier bar chart
+✅ Top 10 states by staffing
+✅ Staffing model distribution
 
-1. Push code to GitHub repository
-2. Go to share.streamlit.io
-3. Connect your repository
-4. Add secrets in Streamlit Cloud dashboard (same format as secrets.toml)
-5. Deploy!
+📈 Staffing Analytics - EXCELLENT!
 
-### AWS/GCP/Azure
+✅ Staffing trends over time
+✅ Benchmark performance distribution (30% at/above benchmark)
+✅ State-level comparison
+✅ Top/bottom performers tables
 
-Use Docker:
-```dockerfile
-FROM python:3.9-slim
+⭐ Quality Insights - AMAZING!
 
-WORKDIR /app
+✅ Stunning scatter plot showing staffing vs quality correlation
+✅ Staffing-quality matrix (4 quadrants)
+✅ Star rating distribution
+✅ Readmission rates by tier
+✅ Deficiencies by tier
 
-COPY requirements.txt .
-RUN pip install -r requirements.txt
+👥 Workforce Mix - IMPRESSIVE!
 
-COPY . .
+✅ 93.1% Employee vs 6.8% Contractor (healthy mix!)
+✅ 393 million total nursing hours - incredible dataset!
+✅ Staffing model trends
+✅ Employee vs contractor trends
+✅ State-level comparison
+✅ Cost equivalent analysis
 
-EXPOSE 8501
+⚠️ Risk Dashboard - POWERFUL!
 
-CMD ["streamlit", "run", "streamlit_app.py", "--server.port=8501", "--server.address=0.0.0.0"]
-```
+✅ 4,029 Facilities at Risk
+✅ Risk category distribution
+✅ Intervention priority breakdown
+✅ 6 risk factors analysis (Low Staffing is #1!)
+✅ Top 20 high-risk facilities table
+✅ Risk by state comparison
+
+🔍 Facility Lookup - PERFECT!
+
+✅ Searchable dropdown with all 14,814 facilities
+✅ Complete facility profile (15 CRAIGSIDE example)
+✅ 5/5 Star Rating, Minimal Risk, 198/100 Quality Score
+✅ 12-month staffing trends
+✅ Workforce mix charts
+✅ Risk factors checklist
+✅ Detailed monthly data tables
+
+
+Key Findings:
+
+38% of facilities are at Critical/High Risk - Major opportunity for intervention!
+Only 30% meet or exceed staffing benchmarks - Widespread staffing shortages
+93% employee-based staffing - Industry is not heavily contractor-dependent
+Low staffing is the #1 risk factor - Affecting 3,300+ facilities
+Clear correlation between staffing and quality - Visible in scatter plot
+
+
 
 ## 🔄 Updating Data
 
@@ -205,41 +242,8 @@ Data automatically refreshes every 10 minutes. To force a refresh:
 1. Click "Refresh Data" button in the sidebar
 2. Or restart the Streamlit app
 
-## 🐛 Troubleshooting
 
-### "Connection Error"
-- Verify Snowflake credentials in `.streamlit/secrets.toml`
-- Check network connectivity to Snowflake
-- Ensure ANALYTICS database exists and user has access
 
-### "No data available"
-- Verify dbt models are deployed and populated
-- Check that schema names match (DBT_ATARIQ_CORE)
-- Run `dbt run` to refresh dbt models
-
-### "Query timeout"
-- Increase Snowflake warehouse size
-- Reduce date range in filters
-- Check for long-running queries in Snowflake
-
-## 📚 Documentation
-
-For more information about the metrics:
-- See Phase 8 documentation for dbt model details
-- Review data lineage graph in dbt docs
-- Check Snowflake tables for raw data
-
-## 🤝 Support
-
-For issues or questions:
-1. Check this README
-2. Review dbt documentation
-3. Check Snowflake query history
-4. Verify data pipeline is running
-
-## 📝 License
-
-Internal use only - Healthcare Analytics Project
 
 
 
