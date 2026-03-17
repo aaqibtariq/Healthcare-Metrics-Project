@@ -12,6 +12,59 @@ Interactive Streamlit dashboard visualizing metrics from 14,814 skilled nursing 
 5. **⚠️ Risk Dashboard** - Multi-factor risk assessment (Metric 5)
 6. **🔍 Facility Lookup** - Search and analyze individual facilities
 
+6 Complete Dashboard Pages:
+🏠 Home Page (streamlit_app.py)
+
+Executive KPI summary
+Risk category distribution (pie chart)
+Quality distribution (bar chart)
+Top 10 states by staffing (horizontal bar)
+Staffing model distribution
+Real-time metrics with auto-refresh
+
+📈 Page 1: Staffing Analytics
+
+Monthly staffing trends (line chart with RN/LPN/CNA breakdown)
+Benchmark performance pie chart
+State-level comparison (top 20 states)
+Top/bottom 10 performers tables
+CSV export functionality
+
+⭐ Page 2: Quality Insights
+
+Staffing vs quality scatter plot with trendline
+Staffing-quality matrix (4 quadrants)
+Star rating distribution
+Readmission rates by quality tier
+Deficiencies analysis
+
+👥 Page 3: Workforce Mix
+
+Staffing model distribution (pie + trend)
+Employee vs contractor percentage trends
+State-level comparison (stacked bars)
+Cost equivalent analysis
+Top contractor-dependent facilities
+
+⚠️ Page 4: Risk Dashboard
+
+Risk category distribution
+Intervention priority breakdown
+6 risk factors analysis (horizontal bar)
+Risk score distribution
+Top 20 high-risk facilities table
+State-level risk comparison
+
+🔍 Page 5: Facility Lookup
+
+Searchable facility dropdown (all 14,814 facilities)
+Complete facility profile with 5 KPIs
+12-month staffing trend chart
+12-month workforce mix chart
+Risk factors checklist
+Quality metrics detail
+Downloadable history tables
+
 ## 🚀 Quick Start
 
 ### Prerequisites
