@@ -80,6 +80,8 @@ Downloadable history tables
 ```bash
 cd healthcare_dashboard
 pip install -r requirements.txt
+pip install streamlit snowflake-connector-python pandas plotly
+
 ```
 
 3. **Configure Snowflake credentials**
