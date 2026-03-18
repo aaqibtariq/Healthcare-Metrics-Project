@@ -193,29 +193,17 @@ This architecture ensures scalability, modularity, security, and cost-efficient 
 
 - [About Source Files ](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/Initial%20Data%20Analysis/About%20files.md)
 
-# Google Drive APi setup
+# Phase 2 - Data Ingestion Pipeline
 
-https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/Google%20drive%20to%20AWS/Google%20Drive%20API.md
+- [Google Drive API Setup](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/Google%20drive%20to%20AWS/Google%20Drive%20API.md)
+- [AWS setup for Data Source Ingestion from Google Drive API](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/Google%20drive%20to%20AWS/AWS%20setup.md)
+- [Lambda layer Package](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/Google%20drive%20to%20AWS/google_layer.zip)
+- [Connection test code ](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/Google%20drive%20to%20AWS/Lambda%20Test%20code.md)
+- [Google Drive to S3 migration code](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/Google%20drive%20to%20AWS/Google%20drive%20to%20S3.md)
+- [Result of first time transfer and readding file to check incremental strategy ](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/Google%20drive%20to%20AWS/Results.md)
+- 
 
-# AWS setup for Data Source Ingestion from Google Drive API
 
-https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/Google%20drive%20to%20AWS/AWS%20setup.md
-
-# Lambda layer Package 
-
-https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/Google%20drive%20to%20AWS/google_layer.zip
-
-# Connection test code 
-
-https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/Google%20drive%20to%20AWS/Lambda%20Test%20code.md
-
-# Google Drive to S3 migration code
-
-https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/Google%20drive%20to%20AWS/Google%20drive%20to%20S3.md
-
-# Result of first time transfer and readding file to check incremental strategy 
-
-https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/Google%20drive%20to%20AWS/Results.md
 
 # Setup Event Processing
 
