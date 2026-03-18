@@ -209,20 +209,16 @@ This architecture ensures scalability, modularity, security, and cost-efficient 
 - [Setup DnamoDB](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/AWS-Snowflake%20Integration/DynamoDB.md)
 - [Updated Lambda code](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/AWS-Snowflake%20Integration/Lambda%20Code.md)
 
+# Phase 4- Snowflake Setup
+
+- [setup Snowflake account](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/AWS-Snowflake%20Integration/Snowflake%20accounts%20setup.md)
+- [File System](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/AWS-Snowflake%20Integration/File%20System.md)
+- [Snowflake and S3 Integration](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/AWS-Snowflake%20Integration/Snowflake%20and%20AWS%20setup.md)
+- [Table Creation in Snowflake ](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/AWS-Snowflake%20Integration/snowflake%20tables%20creation.md)
+- [Pipe Creation](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/AWS-Snowflake%20Integration/Snowpipe%20for%20automated%20ingestion.md)
+
+# Phase 5 - dbt Setup & Transformation
 
 
-# setup Snowflake account
 
-https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/AWS-Snowflake%20Integration/Snowflake%20accounts%20setup.md
 
-# Snowflake and S3 Integration 
-
-https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/AWS-Snowflake%20Integration/Snowflake%20and%20AWS%20setup.md
-
-# Table Creation in Snowflake 
-
-https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/AWS-Snowflake%20Integration/snowflake%20tables%20creation.md
-
-# Pipe Creation 
-
-https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/AWS-Snowflake%20Integration/Snowpipe%20for%20automated%20ingestion.md
