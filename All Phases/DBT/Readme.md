@@ -119,6 +119,24 @@ models:
 
 ```
 
+- Staging as views: Fast, always fresh from source
+- Intermediate as views: No storage duplication
+- Marts as tables: Pre-aggregated, fast queries for dashboard
+- Schemas: Separate schemas for organization
+- Tags: Filter models for selective runs
+
+## STAGING MODELS (Bronze → Silver)
+
+What Staging Models Do:
+
+- Cast data types correctly
+- Trim whitespace
+- Handle NULL values
+- Standardize date formats
+- Rename columns to snake_case
+- Remove duplicates
+- Add audit columns (created_at, etc.)
+
 ##  DBT Pipeline Diagram
 
 
