@@ -133,6 +133,35 @@ healthcare_metrics/
 - accepted_values - Valid state codes
 - accepted_range - Numeric bounds (via dbt_utils package)
 
+## INTERMEDIATE MODELS (Silver → Silver)
+
+## [From DBT](https://github.com/aaqibtariq/Healthcare-Metrics-Project/tree/main/models/intermediate)
+## [MODEL 1 int_facility_metrics.md](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/All%20Phases/DBT/INTERMEDIATE%20MODELS/MODEL%201%20int_facility_metrics.md)
+
+**Key Features:**
+
+- Monthly aggregation
+- Calculates HPRD (Hours Per Resident per Day)
+- Workforce mix percentages
+- Quality metrics joined
+- Handles division by zero (nullif())
+
+
+## [MODEL 2 int_staffing_calculations.md](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/All%20Phases/DBT/INTERMEDIATE%20MODELS/MODEL%202%20int_staffing_calculations.md)
+
+**Calculations:**
+
+- State benchmark comparison
+- Percent above/below state average
+- Occupancy rate
+- Staffing adequacy categories
+
+
+## [MODEL 3 int_quality_scores.md](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/All%20Phases/DBT/INTERMEDIATE%20MODELS/MODEL%203%20int_quality_scores.md)
+**Purpose:** Composite quality scoring
+
+## MARTS MODELS (Silver → Gold)
+
 ##  DBT Pipeline Diagram
 
 
