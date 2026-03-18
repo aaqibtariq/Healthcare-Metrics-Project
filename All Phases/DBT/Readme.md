@@ -3,10 +3,11 @@
 # DBT Notes
 
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/All%20Phases/DBT/image%20(56).jpg" width="800"/>
-</p>
+##  DBT Pipeline Diagram
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/aaqibtariq/Healthcare-Metrics-Project/main/All%20Phases/DBT/image%20(56).jpg" width="800"/>
+</p>
 
 
 LEFT SIDE - SOURCES (Green/Blue):
