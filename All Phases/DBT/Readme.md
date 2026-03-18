@@ -135,6 +135,8 @@ healthcare_metrics/
 
 ## INTERMEDIATE MODELS (Silver → Silver)
 
+**Purpose:** Join staging tables and create reusable building blocks for marts.
+
 ## [From DBT](https://github.com/aaqibtariq/Healthcare-Metrics-Project/tree/main/models/intermediate)
 ## [MODEL 1 int_facility_metrics.md](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/All%20Phases/DBT/INTERMEDIATE%20MODELS/MODEL%201%20int_facility_metrics.md)
 
@@ -161,6 +163,42 @@ healthcare_metrics/
 **Purpose:** Composite quality scoring
 
 ## MARTS MODELS (Silver → Gold)
+
+**Purpose:** Create final business metrics optimized for dashboard consumption.
+
+## [mart_staffing_ratios.md](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/All%20Phases/DBT/Marts/mart_staffing_ratios.md)
+
+**Purpose:** METRIC #1 - Nurse-to-patient staffing ratios
+**Output:** 14,547 rows (facility-month combinations)
+
+
+
+## [mart_high_risk_facilities.md](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/All%20Phases/DBT/Marts/mart_high_risk_facilities.md)
+
+**Purpose:** METRIC #5 - High-risk facility identification
+**Output:** 4,029 facilities with risk scores
+
+
+## [mart_staffing_vs_quality.md](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/All%20Phases/DBT/Marts/mart_staffing_vs_quality.md)
+
+**Purpose:** METRIC #3 - Staffing vs quality correlation
+**Output:** 14,814 facilities with staffing-quality metrics
+
+
+
+## [mart_employee_vs_contractor.md](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/All%20Phases/DBT/Marts/mart_employee_vs_contractor.md)
+
+**Purpose:** METRIC #4 - Employee vs contractor analysis
+**Output:** 14,547 facility-months with workforce composition
+
+## [mart_staffing_vs_occupancy.md](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/All%20Phases/DBT/Marts/mart_staffing_vs_occupancy.md)
+
+**Purpose:** Complete facility profiles for lookup
+**Output:** 14,547 facility profiles
+
+## dbt TESTS
+
+
 
 ##  DBT Pipeline Diagram
 
