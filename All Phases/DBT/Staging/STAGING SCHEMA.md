@@ -1,0 +1,154 @@
+
+```yml
+
+
+version: 2
+
+models:
+  - name: stg_pbj_staffing
+    description: "Cleaned daily staffing data from PBJ (Payroll-Based Journal)"
+    columns:
+      - name: facility_id
+        description: "CMS Certification Number (CCN) - unique facility identifier"
+        tests:
+          - not_null
+      
+      - name: work_date
+        description: "Date of staffing report"
+        tests:
+          - not_null
+      
+      - name: daily_census
+        description: "Number of residents on this date"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              inclusive: true
+      
+      - name: total_nursing_hours
+        description: "Total nursing hours (RN + LPN + CNA)"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              inclusive: true
+
+  - name: stg_provider_info
+    description: "Facility master data with ratings, metrics, and certifications"
+    columns:
+      - name: facility_id
+        description: "CMS Certification Number (CCN) - primary key"
+        tests:
+          - unique
+          - not_null
+      
+      - name: facility_name
+        description: "Official facility name"
+        tests:
+          - not_null
+      
+      - name: state
+        description: "Two-letter state code"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA',
+                       'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD',
+                       'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ',
+                       'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC',
+                       'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY',
+                       'DC', 'PR', 'VI', 'GU', 'AS']
+      
+      - name: overall_rating
+        description: "CMS overall star rating (1-5 stars)"
+        tests:
+          - accepted_values:
+              values: [1, 2, 3, 4, 5]
+              config:
+                where: "overall_rating IS NOT NULL"
+      
+      - name: certified_beds
+        description: "Number of Medicare/Medicaid certified beds"
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 1
+              inclusive: true
+              config:
+                where: "certified_beds IS NOT NULL"
+
+  - name: stg_quality_claims
+    description: "Quality measure outcomes from Medicare claims data"
+    columns:
+      - name: facility_id
+        description: "CMS Certification Number"
+        tests:
+          - not_null
+      
+      - name: readmission_rate_short_stay
+        description: "30-day all-cause readmission rate for short-stay residents (%)"
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 100
+              inclusive: true
+              config:
+                where: "readmission_rate_short_stay IS NOT NULL"
+
+  - name: stg_penalties
+    description: "CMS penalties and enforcement actions"
+    columns:
+      - name: facility_id
+        description: "CMS Certification Number"
+        tests:
+          - not_null
+      
+      - name: penalty_date
+        description: "Date penalty was imposed"
+        tests:
+          - not_null
+      
+      - name: fine_amount
+        description: "Dollar amount of fine"
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              inclusive: true
+              config:
+                where: "fine_amount IS NOT NULL"
+
+  - name: stg_survey_summary
+    description: "Health and fire safety survey deficiencies"
+    columns:
+      - name: facility_id
+        description: "CMS Certification Number"
+        tests:
+          - not_null
+
+  - name: stg_vbp_performance
+    description: "Value-Based Purchasing (VBP) program performance scores"
+    columns:
+      - name: facility_id
+        description: "CMS Certification Number"
+        tests:
+          - not_null
+
+  - name: stg_state_averages
+    description: "State and national benchmark averages"
+    columns:
+      - name: state
+        description: "State code or 'National' for US average"
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_ownership
+    description: "Facility ownership and management information"
+    columns:
+      - name: facility_id
+        description: "CMS Certification Number"
+        tests:
+          - not_null
+
+
+```
