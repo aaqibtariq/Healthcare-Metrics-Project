@@ -6,19 +6,18 @@ Transform raw healthcare data from Snowflake into clean, analytics-ready busines
 
 ## dbt CLOUD SETUP
 
-
-- 1. Created dbt Cloud Account
+**1. Created dbt Cloud Account**
 
 - Signed up at https://cloud.getdbt.com
 - Selected "Developer" plan (free tier)
 
-- 2. Created Project: healthcare_metrics
+**2. Created Project: healthcare_metrics**
 
 - Organization: Personal/Company name
 - Project name: healthcare_metrics
 - Repository: Connected to GitHub (or used dbt Cloud managed repo)
 
-- 3. Connected to Snowflake
+**3. Connected to Snowflake**
 
 - Account: snowflake ID
 - Database: ANALYTICS
@@ -26,7 +25,7 @@ Transform raw healthcare data from Snowflake into clean, analytics-ready busines
 - Role: HEALTHCARE_PIPELINE_ROLE
 - Schema: STAGING (for development)
 
-- 4. Connection settings in dbt Cloud
+**4. Connection settings in dbt Cloud**
 
 - type: snowflake
 - account: snowflake ID
