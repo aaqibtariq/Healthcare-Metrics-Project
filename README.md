@@ -13,11 +13,26 @@ Build a unified analytics system to understand how nurse staffing, workload, and
 
 ## Project Goal
 
-The objective of this project is to design and implement a scalable, event-driven data pipeline that ingests healthcare operational data from Google Drive, stores it in AWS S3, and processes it in Snowflake using a Medallion Architecture (Bronze → Silver → Gold).
+**Overview:** This project implements a production-grade, fully automated data engineering pipeline for analyzing 14,814 skilled nursing facilities across the United States. The platform ingests, transforms, and visualizes healthcare data to provide actionable insights on staffing levels, quality metrics, workforce composition, and facility risk assessment.Business Problem:Healthcare facilities struggle with:
 
-The system enables incremental data ingestion, automated transformation using dbt, and interactive analytics through a Streamlit dashboard.
+- Staffing shortages (only 30% meet benchmarks)
+- Quality variance (38% of facilities at critical/high risk)
+- Workforce planning inefficiencies
+- Compliance monitoring complexity
+- Lack of real-time insights for decision-making
 
-The goal is to provide reliable, near real-time insights into healthcare facility performance, staffing metrics, and operational efficiency while optimizing compute costs through event-driven orchestration.
+**Solution:**
+
+An end-to-end automated pipeline that:
+
+- Syncs data from Google Drive hourly
+- Orchestrates data processing with Step Functions
+- Loads data into Snowflake data warehouse
+- Transforms raw data into business metrics with dbt
+- Visualizes insights in an interactive Streamlit dashboard
+- Sends automated notifications on pipeline status
+- Tracks all executions in DynamoDB
+
 
 ## Abstract
 
@@ -30,6 +45,31 @@ dbt Cloud is used to transform raw data into analytics-ready models across Bronz
 This architecture ensures scalability, modularity, security, and cost-efficient compute utilization.
 
 # Architecture 
+
+## 🏗️ Architecture Diagram
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/aaqibtariq/Healthcare-Metrics-Project/main/Architecture/SD%20for%20Healthcare%20Metrics.jpg" width="800"/>
+</p>
+
+## Technical Architecture:
+
+- Event-Driven: EventBridge triggers on schedule
+- Serverless: AWS Lambda (no servers to manage)
+- Orchestrated: Step Functions coordinates workflow
+- Scalable: Handles 3.3M+ rows across 24 tables
+- Observable: Complete logging and notifications
+- Fault-Tolerant: Retry logic and error handling
+
+## Key Metrics:
+
+- 14,814 facilities tracked
+- 3,349,515 rows of data
+- 393M+ nursing hours analyzed
+- 8 data sources integrated
+- 24 tables (8 raw + 16 transformed)
+- 5 business metrics calculated
+- 100% test coverage (50 dbt tests passing)
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
