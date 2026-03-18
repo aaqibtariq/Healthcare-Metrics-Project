@@ -203,19 +203,13 @@ This architecture ensures scalability, modularity, security, and cost-efficient 
 - [Result of first time transfer and readding file to check incremental strategy ](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/Google%20drive%20to%20AWS/Results.md)
 - 
 
+# Phase 3 - Storage & Event Processing
+
+- [Setup Event Processing](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/AWS-Snowflake%20Integration/Event%20Processing.md)
+- [Setup DnamoDB](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/AWS-Snowflake%20Integration/DynamoDB.md)
+- [Updated Lambda code](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/AWS-Snowflake%20Integration/Lambda%20Code.md)
 
 
-# Setup Event Processing
-
-https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/AWS-Snowflake%20Integration/Event%20Processing.md
-
-# Setup DnamoDB
-
-https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/AWS-Snowflake%20Integration/DynamoDB.md
-
-# Updated Lambda code
-
-https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/AWS-Snowflake%20Integration/Lambda%20Code.md
 
 # setup Snowflake account
 
