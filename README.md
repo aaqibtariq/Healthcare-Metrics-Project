@@ -2,7 +2,14 @@
 
 ## Core Objective
 
+**Industry:** Healthcare Analytics
+**Data Volume:** 1.6M+ rows across 8 data sources
+**Facilities Tracked:** 14,814 skilled nursing facilities
+**Total Nursing Hours Analyzed:** 393+ million hours
+**Architecture:** Event-driven, serverless, cloud-native
+
 Build a unified analytics system to understand how nurse staffing, workload, and patient volumes impact care quality and operational efficiency across multiple hospital facilities.
+
 
 ## Project Goal
 
@@ -27,43 +34,38 @@ This architecture ensures scalability, modularity, security, and cost-efficient 
 
 ### Cloud & Infrastructure
 
--  AWS Lambda (serverless ingestion)
+- AWS Lambda (serverless compute)
+- AWS Step Functions (orchestration)
+- AWS S3 (data lake)
+- AWS EventBridge (scheduling)
+- AWS SNS (notifications)
+- AWS DynamoDB (state management)
+- AWS Secrets Manager (credentials)
+- AWS IAM (security)
+- AWS CloudWatch (monitoring)
 
--  AWS S3 (data lake / landing zone)
+**Data & Analytics:**
 
--  AWS IAM (role-based access control)
+- Snowflake (data warehouse)
+- Medallion Architecture (Bronze → Silver → Gold layers)
+- Snowpipe (auto-ingestion)
+- dbt Cloud (transformations)
+- Google Drive API (data source)
 
--  AWS Secrets Manager (secure credential management)
+**Visualization & UI:**
 
--  AWS EventBridge (event-driven orchestration)
+- Streamlit (dashboard framework)
+- Plotly (interactive charts)
+- Python (data processing)
 
-### Data Warehouse
+**Languages & Libraries:**
 
--  Snowflake (cloud data warehouse)
+- Python 3.11
+- SQL
+- YAML (dbt config)
+- JSON (AWS configs)
+- Jinja (dbt templating)
 
--  Medallion Architecture (Bronze → Silver → Gold layers)
-
--  Snowpipe / COPY INTO (data ingestion from S3)
-
-### Transformation
-
--  dbt Cloud (data transformation & testing)
-
--  SQL (analytics modeling)
-
--  Analytics & Visualization
-
--  Streamlit (interactive dashboard)
-
--  Plotly (data visualization)
-
-### Programming & APIs
-
--  Python (AWS Lambda & API integration)
-
--  Google Drive API (data source ingestion)
-
--   dbt Cloud REST API (job orchestration)
 
 
 # Google Drive APi setup
