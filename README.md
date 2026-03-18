@@ -188,7 +188,11 @@ This architecture ensures scalability, modularity, security, and cost-efficient 
 - Jinja (dbt templating)
 
 
-# Phase 1 - 
+# Phase 1 - Initial Data Analysis
+
+
+- [About Source Files ](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/Initial%20Data%20Analysis/About%20files.md)
+
 # Google Drive APi setup
 
 https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/Google%20drive%20to%20AWS/Google%20Drive%20API.md
