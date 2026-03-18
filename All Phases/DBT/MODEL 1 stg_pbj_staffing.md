@@ -1,12 +1,4 @@
-## Purpose: Clean daily staffing data (1.4M rows)
 
-**Key Transformations:**
-
-- NULL handling with coalesce()
-- Date parsing with to_date()
-- Column renaming (hrs_rn_emp → rn_emp_hours)
-- Calculated totals (total_rn_hours, total_emp_hours)
-- Data quality filter (census > 0)
 
 ```
 {{
