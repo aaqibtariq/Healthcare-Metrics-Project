@@ -65,9 +65,11 @@ healthcare_metrics/
 - Schemas: Separate schemas for organization
 - Tags: Filter models for selective runs
 
+
+
 ## STAGING MODELS (Bronze → Silver)
 
-What Staging Models Do:
+**What Staging Models Do:**
 
 - Cast data types correctly
 - Trim whitespace
@@ -76,6 +78,19 @@ What Staging Models Do:
 - Rename columns to snake_case
 - Remove duplicates
 - Add audit columns (created_at, etc.)
+
+ 
+## [MODEL 1 stg_pbj_staffing.md](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/All%20Phases/DBT/MODEL%201%20stg_pbj_staffing.md)
+
+Purpose: Clean daily staffing data (1.4M rows)
+
+**Key Transformations:**
+
+- NULL handling with coalesce()
+- Date parsing with to_date()
+- Column renaming (hrs_rn_emp → rn_emp_hours)
+- Calculated totals (total_rn_hours, total_emp_hours)
+- Data quality filter (census > 0)
 
 ##  DBT Pipeline Diagram
 
