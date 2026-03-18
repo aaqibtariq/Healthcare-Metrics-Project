@@ -46,7 +46,7 @@ This architecture ensures scalability, modularity, security, and cost-efficient 
 
 # Architecture 
 
-## 🏗️ Architecture Diagram
+##  Architecture Diagram
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/aaqibtariq/Healthcare-Metrics-Project/main/Architecture/SD%20for%20Healthcare%20Metrics.jpg" width="800"/>
