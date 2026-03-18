@@ -79,9 +79,9 @@ healthcare_metrics/
 - Add audit columns (created_at, etc.)
 
  
-## [MODEL 1 stg_pbj_staffing.md](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/All%20Phases/DBT/MODEL%201%20stg_pbj_staffing.md)
+## [MODEL 1 stg_pbj_staffing.md](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/All%20Phases/DBT/Staging/MODEL%201%20stg_pbj_staffing.md)
 
-Purpose: Clean daily staffing data (1.4M rows)
+**Purpose:** Clean daily staffing data (1.4M rows)
 
 **Key Transformations:**
 
@@ -90,6 +90,48 @@ Purpose: Clean daily staffing data (1.4M rows)
 - Column renaming (hrs_rn_emp → rn_emp_hours)
 - Calculated totals (total_rn_hours, total_emp_hours)
 - Data quality filter (census > 0)
+
+## [MODEL 2 tg_provider_info.md](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/All%20Phases/DBT/Staging/MODEL%202%20tg_provider_info.md)
+
+**Purpose:** Clean facility master data (14,814 facilities)
+
+**Key Transformations:**
+
+- String trimming
+- Standardized naming (provnum → facility_id)
+- NULL handling for numeric fields
+- Star rating columns preserved
+
+## [MODEL 3 stg_quality_claims.md](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/All%20Phases/DBT/Staging/MODEL%203%20stg_quality_claims.md)
+
+**Purpose: Clean quality measure claims data (~100K rows)**
+
+**Key Transformations:**
+
+- Categorization (measure_category)
+- Date parsing
+- Score normalization
+
+*** Now same logic for belows models as well
+
+## [MODEL 4 stg_vbp_performance.md](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/All%20Phases/DBT/Staging/MODEL%204%20stg_vbp_performance.md)
+
+## [MODEL 5 stg_state_averages.md](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/All%20Phases/DBT/Staging/MODEL%205%20stg_state_averages.md)
+
+## [MODEL 6 stg_penalties.md](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/All%20Phases/DBT/Staging/MODEL%206%20stg_penalties.md)
+
+## [MODEL 7 stg_survey_summary.md](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/All%20Phases/DBT/Staging/MODEL%207%20stg_survey_summary.md)
+
+## [MODEL 8 stg_ownership.md](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/All%20Phases/DBT/Staging/MODEL%208%20stg_ownership.md)
+
+## [STAGING SCHEMA.md](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/All%20Phases/DBT/Staging/STAGING%20SCHEMA.md)
+
+**Tests Applied:**
+
+- not_null - Required fields
+- unique - Primary keys
+- accepted_values - Valid state codes
+- accepted_range - Numeric bounds (via dbt_utils package)
 
 ##  DBT Pipeline Diagram
 
