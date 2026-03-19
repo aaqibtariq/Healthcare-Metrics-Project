@@ -226,11 +226,11 @@ This dbt project transforms raw healthcare data from Snowflake into analytics-re
 
 # Phase 6 - Step Function
 
-- Automates pipeline orchestration
-- Handles failures gracefully
-- Improves reliability of data pipeline
-- Enables scalable and event-driven processing
-- Provides full visibility via CloudWatch
+- **Automates pipeline orchestration**
+- **Handles failures gracefully**
+- **Improves reliability of data pipeline**
+- **Enables scalable and event-driven processing**
+- **Provides full visibility via CloudWatch**
 
 - [Structure](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/Step%20Function/readme.md)
 - [Step Function](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/Step%20Function/step%20Function.md)
