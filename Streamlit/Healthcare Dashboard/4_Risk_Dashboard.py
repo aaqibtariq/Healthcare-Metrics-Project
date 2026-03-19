@@ -8,9 +8,9 @@ import plotly.express as px
 import plotly.graph_objects as go
 from utils import run_query, format_number
 
-st.set_page_config(page_title="Risk Dashboard", page_icon="⚠️", layout="wide")
+st.set_page_config(page_title="Risk Dashboard", page_icon="", layout="wide")
 
-st.title("⚠️ Risk Dashboard")
+st.title(" Risk Dashboard")
 st.markdown("### Multi-factor risk assessment and facility prioritization")
 st.markdown("---")
 
@@ -43,7 +43,7 @@ with st.sidebar:
     st.markdown("---")
     
     # Risk factors
-    st.markdown("### 🎯 Risk Factors")
+    st.markdown("###  Risk Factors")
     show_low_staffing = st.checkbox("Low Staffing", value=True)
     show_high_turnover = st.checkbox("High Turnover", value=True)
     show_low_rating = st.checkbox("Low Rating", value=True)
@@ -114,7 +114,7 @@ if df.empty:
     st.stop()
 
 # Summary metrics
-st.markdown("## 📊 Risk Summary")
+st.markdown("##  Risk Summary")
 col1, col2, col3, col4 = st.columns(4)
 
 with col1:
@@ -141,7 +141,7 @@ st.markdown("---")
 col_risk1, col_risk2 = st.columns(2)
 
 with col_risk1:
-    st.markdown("### ⚠️ Risk Category Distribution")
+    st.markdown("###  Risk Category Distribution")
     
     risk_counts = df['RISK_CATEGORY'].value_counts().reset_index()
     risk_counts.columns = ['Category', 'Count']
@@ -178,7 +178,7 @@ with col_risk1:
     st.plotly_chart(fig_risk, use_container_width=True)
 
 with col_risk2:
-    st.markdown("### 🎯 Intervention Priority")
+    st.markdown("###  Intervention Priority")
     
     priority_counts = df['INTERVENTION_PRIORITY'].value_counts().sort_index().reset_index()
     priority_counts.columns = ['Priority', 'Count']
@@ -206,7 +206,7 @@ with col_risk2:
 st.markdown("---")
 
 # Risk factors breakdown
-st.markdown("### 🔍 Risk Factors Analysis")
+st.markdown("###  Risk Factors Analysis")
 
 risk_factors_data = {
     'Risk Factor': [
@@ -253,7 +253,7 @@ st.plotly_chart(fig_factors, use_container_width=True)
 st.markdown("---")
 
 # Risk score distribution
-st.markdown("### 📊 Risk Score Distribution")
+st.markdown("###  Risk Score Distribution")
 
 score_dist = df['TOTAL_RISK_SCORE'].value_counts().sort_index().reset_index()
 score_dist.columns = ['Risk Score', 'Count']
@@ -281,7 +281,7 @@ st.plotly_chart(fig_score, use_container_width=True)
 st.markdown("---")
 
 # High-risk facilities table
-st.markdown("### 🚨 High-Risk Facilities (Top 20)")
+st.markdown("###  High-Risk Facilities (Top 20)")
 
 top_risk = df.nlargest(20, 'TOTAL_RISK_SCORE')[[
     'FACILITY_NAME', 'STATE', 'TOTAL_RISK_SCORE', 'RISK_CATEGORY', 
@@ -307,7 +307,7 @@ st.markdown("---")
 
 # State comparison (if All States)
 if selected_state == 'All States':
-    st.markdown("### 📍 Risk by State")
+    st.markdown("###  Risk by State")
     
     state_risk = df.groupby('STATE').agg({
         'FACILITY_ID': 'count',
@@ -342,7 +342,7 @@ if selected_state == 'All States':
 
 # Detailed risk breakdown
 st.markdown("---")
-st.markdown("### 📋 Detailed Risk Metrics by Category")
+st.markdown("###  Detailed Risk Metrics by Category")
 
 risk_stats = df.groupby('RISK_CATEGORY').agg({
     'FACILITY_ID': 'count',
@@ -370,7 +370,7 @@ st.dataframe(risk_stats, hide_index=True, use_container_width=True)
 
 # Download option
 st.markdown("---")
-st.markdown("### 💾 Export Data")
+st.markdown("###  Export Data")
 
 col_dl1, col_dl2 = st.columns(2)
 
