@@ -8,15 +8,15 @@ import plotly.express as px
 import plotly.graph_objects as go
 from utils import run_query, format_number
 
-st.set_page_config(page_title="Quality Insights", page_icon="⭐", layout="wide")
+st.set_page_config(page_title="Quality Insights", page_icon="", layout="wide")
 
-st.title("⭐ Quality Insights")
+st.title(" Quality Insights")
 st.markdown("### Understanding the relationship between staffing and quality outcomes")
 st.markdown("---")
 
 # Sidebar filters
 with st.sidebar:
-    st.markdown("## 🔍 Filters")
+    st.markdown("##  Filters")
     
     # Quality tier filter
     quality_tiers = st.multiselect(
@@ -141,7 +141,7 @@ st.markdown("---")
 col_left, col_right = st.columns(2)
 
 with col_left:
-    st.markdown("### 🎯 Staffing-Quality Matrix")
+    st.markdown("###  Staffing-Quality Matrix")
     
     matrix_counts = df['STAFFING_QUALITY_CATEGORY'].value_counts().reset_index()
     matrix_counts.columns = ['Category', 'Count']
@@ -180,7 +180,7 @@ with col_left:
     st.plotly_chart(fig_matrix, use_container_width=True)
 
 with col_right:
-    st.markdown("### ⭐ Star Rating Distribution")
+    st.markdown("###  Star Rating Distribution")
     
     rating_dist = df['OVERALL_RATING'].value_counts().sort_index().reset_index()
     rating_dist.columns = ['Rating', 'Count']
@@ -208,7 +208,7 @@ with col_right:
 st.markdown("---")
 
 # Full width - Quality tier breakdown
-st.markdown("### 📊 Quality Metrics by Tier")
+st.markdown("###  Quality Metrics by Tier")
 
 tier_stats = df.groupby('QUALITY_TIER').agg({
     'COMPOSITE_QUALITY_SCORE': 'mean',
@@ -240,7 +240,7 @@ st.markdown("---")
 col_read1, col_read2 = st.columns(2)
 
 with col_read1:
-    st.markdown("### 🏥 Readmission Rates by Quality Tier")
+    st.markdown("###  Readmission Rates by Quality Tier")
     
     readmit_data = df.groupby('QUALITY_TIER')['READMISSION_RATE_SHORT_STAY'].mean().reset_index()
     
@@ -266,7 +266,7 @@ with col_read1:
     st.plotly_chart(fig_readmit, use_container_width=True)
 
 with col_read2:
-    st.markdown("### 📋 Deficiencies by Quality Tier")
+    st.markdown("###  Deficiencies by Quality Tier")
     
     defic_data = df.groupby('QUALITY_TIER')['HEALTH_DEFICIENCIES'].mean().reset_index()
     
@@ -293,7 +293,7 @@ with col_read2:
 
 # Download option
 st.markdown("---")
-st.markdown("### 💾 Export Data")
+st.markdown("###  Export Data")
 csv = df.to_csv(index=False)
 st.download_button(
     label="Download Quality Data as CSV",
