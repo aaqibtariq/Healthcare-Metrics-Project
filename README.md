@@ -253,6 +253,4 @@ This dbt project transforms raw healthcare data from Snowflake into analytics-re
  
 # End
 
-**References**
-
--  
+**Thank You**
