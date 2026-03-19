@@ -246,5 +246,5 @@ This dbt project transforms raw healthcare data from Snowflake into analytics-re
 - **Enables real-time analytics from Snowflake**
 - **Provides interactive decision-making tool**
   
-    - [HealtCare](https://github.com/aaqibtariq/Healthcare-Metrics-Project/tree/main/Streamlit/Healthcare%20Dashboard)
+    - [HealthCare](https://github.com/aaqibtariq/Healthcare-Metrics-Project/tree/main/Streamlit/Healthcare%20Dashboard)
     - [Result](https://github.com/aaqibtariq/Healthcare-Metrics-Project/tree/main/Streamlit/Healthcare%20Dashboard/Results)
