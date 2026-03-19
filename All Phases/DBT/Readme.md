@@ -2,6 +2,8 @@
 
 # DBT 
 
+This dbt project transforms raw healthcare data from Snowflake into analytics-ready business metrics using the Medallion Architecture (Bronze → Silver → Gold). The project processes 3.3M+ rows across 24 tables to deliver 5 core business metrics for 14,814 skilled nursing facilities.
+
 Transform raw healthcare data from Snowflake into clean, analytics-ready business metrics using dbt
 
 ## dbt CLOUD SETUP
@@ -275,5 +277,42 @@ Whats done
 - Interactive documentation with visual lineage
 - 5 business-critical metrics ready for dashboards
 - Clean, maintainable architecture
+
+## Key Metrics Delivered
+
+**Metric 1: Staffing Benchmarks**
+
+- Average nursing hours per resident per day (HPRD)
+- State-level benchmarking (median, p25, p75)
+- Performance categories (Above/Below Benchmark)
+- Percentile rankings within state
+
+**Metric 2: High-Risk Facilities**
+
+- Composite risk scores (0-50 scale)
+- Risk categories: Critical, High, Medium, Low
+- 5 risk factors: Low staffing, high turnover, penalties, poor quality, high readmissions
+- Priority rankings for intervention
+
+**Metric 3: Quality Performance**
+
+- Staffing-quality correlation analysis
+- Staffing-quality quadrants (4 categories)
+- Readmission rates and ED visits
+- Star rating distributions
+
+**Metric 4: Workforce Analysis**
+
+- Employee vs contractor percentages
+- Staffing model classifications (5 types)
+- Cost equivalent hours (contractors 40% premium)
+- Workforce mix by state and facility type
+
+**Metric 5: Facility Profiles**
+
+- Individual facility lookup
+- Latest month metrics snapshot
+- Risk assessment integrated
+- Quality tier classification
 
   
