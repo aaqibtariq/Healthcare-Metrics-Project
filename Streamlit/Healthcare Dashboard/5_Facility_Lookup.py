@@ -7,14 +7,14 @@ import pandas as pd
 import plotly.graph_objects as go
 from utils import run_query, format_number
 
-st.set_page_config(page_title="Facility Lookup", page_icon="🔍", layout="wide")
+st.set_page_config(page_title="Facility Lookup", page_icon="", layout="wide")
 
-st.title("🔍 Facility Lookup")
+st.title(" Facility Lookup")
 st.markdown("### Search and analyze individual facilities")
 st.markdown("---")
 
 # Facility search
-st.markdown("## 🏥 Search for a Facility")
+st.markdown("##  Search for a Facility")
 
 col_search1, col_search2 = st.columns([2, 1])
 
@@ -51,7 +51,7 @@ with col_search2:
     st.metric("Total Facilities", format_number(total_facilities))
 
 if not selected_facility_id:
-    st.info("👆 Select a facility to view detailed metrics")
+    st.info(" Select a facility to view detailed metrics")
     st.stop()
 
 st.markdown("---")
@@ -99,13 +99,13 @@ with st.spinner("Loading facility data..."):
 
 # Display facility header
 if not facility_info.empty:
-    st.markdown(f"## 🏥 {facility_info['FACILITY_NAME'].iloc[0]}")
+    st.markdown(f"##  {facility_info['FACILITY_NAME'].iloc[0]}")
     st.markdown(f"**State:** {facility_info['STATE'].iloc[0]} | **Facility ID:** {facility_info['FACILITY_ID'].iloc[0]}")
     
     st.markdown("---")
     
     # Key metrics row
-    st.markdown("### 📊 Key Performance Indicators")
+    st.markdown("###  Key Performance Indicators")
     col1, col2, col3, col4, col5 = st.columns(5)
     
     with col1:
@@ -138,7 +138,7 @@ if not facility_info.empty:
     col_left, col_right = st.columns(2)
     
     with col_left:
-        st.markdown("### 📈 Staffing Trends (Last 12 Months)")
+        st.markdown("###  Staffing Trends (Last 12 Months)")
         
         if not staffing_data.empty:
             staffing_data['MONTH'] = pd.to_datetime(staffing_data['MONTH'])
@@ -175,7 +175,7 @@ if not facility_info.empty:
             st.info("No staffing trend data available")
     
     with col_right:
-        st.markdown("### 👥 Workforce Mix (Last 12 Months)")
+        st.markdown("###  Workforce Mix (Last 12 Months)")
         
         if not workforce_data.empty:
             workforce_data['MONTH'] = pd.to_datetime(workforce_data['MONTH'])
@@ -212,7 +212,7 @@ if not facility_info.empty:
     st.markdown("---")
     
     # Risk factors breakdown
-    st.markdown("### ⚠️ Risk Factors Analysis")
+    st.markdown("###  Risk Factors Analysis")
     
     risk_factors = {
         'Low Staffing': facility_info['RISK_LOW_STAFFING'].iloc[0],
@@ -229,15 +229,15 @@ if not facility_info.empty:
     for idx, (factor, value) in enumerate(risk_factors.items()):
         with cols[idx]:
             if value == 1:
-                st.error(f"❌ {factor}")
+                st.error(f" {factor}")
             else:
-                st.success(f"✅ {factor}")
+                st.success(f" {factor}")
     
     st.markdown("---")
     
     # Quality metrics detail
     if not quality_data.empty:
-        st.markdown("### ⭐ Quality Metrics Detail")
+        st.markdown("###  Quality Metrics Detail")
         
         col_q1, col_q2, col_q3, col_q4 = st.columns(4)
         
@@ -261,7 +261,7 @@ if not facility_info.empty:
     
     # Occupancy correlation
     if not occupancy_data.empty:
-        st.markdown("### 📊 Staffing Flexibility Analysis")
+        st.markdown("###  Staffing Flexibility Analysis")
         
         col_o1, col_o2, col_o3, col_o4 = st.columns(4)
         
@@ -284,9 +284,9 @@ if not facility_info.empty:
         st.markdown("---")
     
     # Detailed data tables
-    st.markdown("### 📋 Detailed Monthly Data")
+    st.markdown("###  Detailed Monthly Data")
     
-    tab1, tab2 = st.tabs(["📈 Staffing History", "👥 Workforce History"])
+    tab1, tab2 = st.tabs([" Staffing History", " Workforce History"])
     
     with tab1:
         if not staffing_data.empty:
