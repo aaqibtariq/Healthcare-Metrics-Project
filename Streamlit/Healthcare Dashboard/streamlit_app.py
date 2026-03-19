@@ -11,7 +11,7 @@ from utils import run_query, format_number
 # Page configuration
 st.set_page_config(
     page_title="Healthcare Analytics Dashboard",
-    page_icon="🏥",
+    page_icon="",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -39,7 +39,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Header
-st.title("🏥 Healthcare Analytics Dashboard")
+st.title(" Healthcare Analytics Dashboard")
 st.markdown("### Comprehensive insights from 14,814 skilled nursing facilities")
 st.markdown("---")
 
@@ -50,15 +50,15 @@ with st.sidebar:
     st.markdown("""
     Use the sidebar to navigate between different analytics views:
     
-    - **📈 Staffing Analytics** - Staffing ratios and benchmarks
-    - **⭐ Quality Insights** - Quality vs staffing correlation
-    - **👥 Workforce Mix** - Employee vs contractor analysis
-    - **⚠️ Risk Dashboard** - High-risk facility identification
-    - **🔍 Facility Lookup** - Search specific facilities
+    - ** Staffing Analytics** - Staffing ratios and benchmarks
+    - ** Quality Insights** - Quality vs staffing correlation
+    - ** Workforce Mix** - Employee vs contractor analysis
+    - ** Risk Dashboard** - High-risk facility identification
+    - ** Facility Lookup** - Search specific facilities
     """)
     
     st.markdown("---")
-    st.markdown("### 🔄 Data Refresh")
+    st.markdown("###  Data Refresh")
     if st.button("Refresh Data", use_container_width=True):
         st.cache_data.clear()
         st.success("Data refreshed!")
@@ -141,7 +141,7 @@ with st.spinner("Loading dashboard data..."):
     data = load_summary_stats()
 
 # Key Metrics Row
-st.markdown("## 📊 Key Metrics")
+st.markdown("##  Key Metrics")
 col1, col2, col3, col4 = st.columns(4)
 
 with col1:
@@ -184,7 +184,7 @@ st.markdown("---")
 col_left, col_right = st.columns(2)
 
 with col_left:
-    st.markdown("### ⚠️ Risk Category Distribution")
+    st.markdown("###  Risk Category Distribution")
     if not data['risk'].empty:
         fig_risk = px.pie(
             data['risk'],
@@ -211,7 +211,7 @@ with col_left:
         st.info("No risk data available")
 
 with col_right:
-    st.markdown("### ⭐ Quality Distribution")
+    st.markdown("###  Quality Distribution")
     if not data['quality'].empty:
         fig_quality = go.Figure()
         fig_quality.add_trace(go.Bar(
@@ -238,7 +238,7 @@ st.markdown("---")
 col_full1, col_full2 = st.columns(2)
 
 with col_full1:
-    st.markdown("### 📍 Top 10 States by Avg Staffing")
+    st.markdown("###  Top 10 States by Avg Staffing")
     if not data['states'].empty:
         top_states = data['states'].head(10)
         fig_states = go.Figure()
@@ -262,7 +262,7 @@ with col_full1:
         st.info("No state data available")
 
 with col_full2:
-    st.markdown("### 👥 Staffing Model Distribution")
+    st.markdown("###  Staffing Model Distribution")
     if not data['staffing_mix'].empty:
         fig_mix = go.Figure()
         fig_mix.add_trace(go.Bar(
