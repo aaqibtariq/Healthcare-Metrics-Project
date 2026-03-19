@@ -219,6 +219,8 @@ This architecture ensures scalability, modularity, security, and cost-efficient 
 
 # Phase 5 - dbt Setup & Transformation
 
+This dbt project transforms raw healthcare data from Snowflake into analytics-ready business metrics using the Medallion Architecture (Bronze → Silver → Gold). The project processes 3.3M+ rows across 24 tables to deliver 5 core business metrics for 14,814 skilled nursing facilities.
+
 - [DBT](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/All%20Phases/DBT/Readme.md)
 
 
