@@ -208,6 +208,8 @@ This architecture ensures scalability, modularity, security, and cost-efficient 
 - [Setup Event Processing](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/AWS-Snowflake%20Integration/Event%20Processing.md)
 - [Setup DnamoDB](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/AWS-Snowflake%20Integration/DynamoDB.md)
 - [Updated Lambda code](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/AWS-Snowflake%20Integration/Lambda%20Code.md)
+- [Aws View](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/All%20Phases/Reference%20files/Readme.md)
+
 
 # Phase 4- Snowflake Setup
 
@@ -248,3 +250,9 @@ This dbt project transforms raw healthcare data from Snowflake into analytics-re
   
     - [HealthCare](https://github.com/aaqibtariq/Healthcare-Metrics-Project/tree/main/Streamlit/Healthcare%20Dashboard)
     - [Result](https://github.com/aaqibtariq/Healthcare-Metrics-Project/tree/main/Streamlit/Healthcare%20Dashboard/Results)
+ 
+# End
+
+**References**
+
+-  
