@@ -1,0 +1,158 @@
+```yml
+
+version: 2
+
+models:
+  - name: mart_staffing_ratios
+    description: "Monthly staffing ratios compared to state benchmarks - METRIC 1"
+    columns:
+      - name: facility_id
+        description: "Facility identifier"
+        tests:
+          - not_null
+      
+      - name: month
+        description: "Month of aggregation"
+        tests:
+          - not_null
+      
+      - name: avg_total_nursing_hprd
+        description: "Average total nursing hours per resident per day"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              inclusive: true
+      
+      - name: benchmark_category
+        description: "Performance vs state benchmark"
+        tests:
+          - accepted_values:
+              values: ['At or Above Benchmark', 'Slightly Below Benchmark', 'Significantly Below Benchmark']
+              config:
+                where: "benchmark_category IS NOT NULL"
+
+  - name: mart_staffing_vs_occupancy
+    description: "Staffing flexibility and occupancy correlation analysis - METRIC 2"
+    columns:
+      - name: facility_id
+        description: "Facility identifier"
+        tests:
+          - unique
+          - not_null
+      
+      - name: staffing_occupancy_correlation
+        description: "Correlation coefficient between occupancy and staffing"
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: -1
+              max_value: 1
+              inclusive: true
+              config:
+                where: "staffing_occupancy_correlation IS NOT NULL"
+      
+      - name: staffing_flexibility
+        description: "Ability to adjust staffing based on occupancy"
+        tests:
+          - accepted_values:
+              values: ['High Flexibility', 'Medium Flexibility', 'Low Flexibility']
+              config:
+                where: "staffing_flexibility IS NOT NULL"
+
+  - name: mart_staffing_vs_quality
+    description: "Relationship between staffing levels and quality outcomes - METRIC 3"
+    columns:
+      - name: facility_id
+        description: "Facility identifier"
+        tests:
+          - unique
+          - not_null
+      
+      - name: composite_quality_score
+        description: "Composite quality score"
+        tests:
+          - not_null
+      
+      - name: quality_tier
+        description: "Quality performance tier"
+        tests:
+          - accepted_values:
+              values: ['High Quality', 'Medium Quality', 'Low Quality', 'Very Low Quality']
+      
+      - name: staffing_quality_category
+        description: "Combined staffing and quality classification"
+        tests:
+          - accepted_values:
+              values: ['High Staffing, High Quality', 'High Staffing, Low Quality', 
+                       'Low Staffing, High Quality', 'Low Staffing, Low Quality']
+              config:
+                where: "staffing_quality_category IS NOT NULL"
+
+  - name: mart_employee_vs_contractor
+    description: "Employee vs contractor staffing mix and cost analysis - METRIC 4"
+    columns:
+      - name: facility_id
+        description: "Facility identifier"
+        tests:
+          - not_null
+      
+      - name: month
+        description: "Month of aggregation"
+        tests:
+          - not_null
+      
+      - name: employee_pct
+        description: "Percentage of total hours from employees"
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 100
+              inclusive: true
+      
+      - name: contractor_pct
+        description: "Percentage of total hours from contractors"
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 100
+              inclusive: true
+      
+      - name: staffing_model
+        description: "Staffing model category"
+        tests:
+          - accepted_values:
+              values: ['Contractor Dependent', 'Mixed Model', 'Primarily Employee', 'Employee Only']
+
+  - name: mart_high_risk_facilities
+    description: "Multi-factor risk assessment for facility prioritization - METRIC 5"
+    columns:
+      - name: facility_id
+        description: "Facility identifier"
+        tests:
+          - unique
+          - not_null
+      
+      - name: total_risk_score
+        description: "Total risk score (0-6)"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 6
+              inclusive: true
+      
+      - name: risk_category
+        description: "Risk level classification"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Critical Risk', 'High Risk', 'Medium Risk', 'Low Risk', 'Minimal Risk']
+      
+      - name: intervention_priority
+        description: "Priority for intervention (1=highest)"
+        tests:
+          - not_null
+          - accepted_values:
+              values: [1, 2, 3, 4]
+
+```
