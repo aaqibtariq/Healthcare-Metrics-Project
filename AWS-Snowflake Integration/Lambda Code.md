@@ -147,9 +147,9 @@ def log_file_to_dynamodb(file_metadata: dict):
                 "execution_id": file_metadata.get("execution_id", "")
             }
         )
-        print(f"✅ Logged file to DynamoDB: {file_metadata['file_name']}")
+        print(f" Logged file to DynamoDB: {file_metadata['file_name']}")
     except Exception as e:
-        print(f"⚠️ DynamoDB file log failed (continuing): {str(e)}")
+        print(f" DynamoDB file log failed (continuing): {str(e)}")
 
 
 def list_drive_files(service):
@@ -176,10 +176,10 @@ def lambda_handler(event, context):
                 "file_list": []
             }
         )
-        print(f"🚀 Pipeline execution started: {execution_id}")
+        print(f" Pipeline execution started: {execution_id}")
     except Exception as e:
         # Don't block the pipeline if execution logging fails
-        print(f"⚠️ Could not write execution START to DynamoDB (continuing): {str(e)}")
+        print(f" Could not write execution START to DynamoDB (continuing): {str(e)}")
 
     # --------- Existing pipeline logic ---------
     run_ts = utc_now_iso()
@@ -213,16 +213,16 @@ def lambda_handler(event, context):
             reasons[reason] += 1
 
             if not ok:
-                print(f"⏭️ Skipping unchanged: {name}")
+                print(f" Skipping unchanged: {name}")
                 skipped += 1
                 continue
 
-            print(f"🔄 Processing ({reason}): {name}")
+            print(f" Processing ({reason}): {name}")
             data = download_file(service, file_id)
 
             # Upload to S3
             s3_key, s3_uri = upload_to_s3(data, name, load_dt)
-            print(f"✅ Uploaded to {s3_uri}")
+            print(f" Uploaded to {s3_uri}")
 
             # Local checksum (optional)
             local_checksum = hashlib.md5(data).hexdigest()
@@ -269,9 +269,9 @@ def lambda_handler(event, context):
                     ":files": [f["name"] for f in files_uploaded_to_s3],
                 }
             )
-            print(f"✅ Pipeline execution SUCCESS: {execution_id}")
+            print(f" Pipeline execution SUCCESS: {execution_id}")
         except Exception as e:
-            print(f"⚠️ Could not write execution SUCCESS to DynamoDB (continuing): {str(e)}")
+            print(f" Could not write execution SUCCESS to DynamoDB (continuing): {str(e)}")
 
         print(f"SUMMARY: copied={copied}, skipped={skipped}, reasons={reasons}")
         return {
@@ -298,9 +298,9 @@ def lambda_handler(event, context):
                     ":error": str(e),
                 }
             )
-            print(f"❌ Pipeline execution FAILED: {execution_id}")
+            print(f" Pipeline execution FAILED: {execution_id}")
         except Exception as ee:
-            print(f"⚠️ Could not write execution FAILED to DynamoDB: {str(ee)}")
+            print(f" Could not write execution FAILED to DynamoDB: {str(ee)}")
 
         print(f"Pipeline execution failed: {execution_id}, Error: {str(e)}")
         raise
