@@ -8,15 +8,15 @@ import plotly.express as px
 import plotly.graph_objects as go
 from utils import run_query, format_number
 
-st.set_page_config(page_title="Workforce Mix", page_icon="👥", layout="wide")
+st.set_page_config(page_title="Workforce Mix", page_icon="", layout="wide")
 
-st.title("👥 Workforce Mix Analysis")
+st.title(👥 Workforce Mix Analysis")
 st.markdown("### Employee vs contractor staffing patterns and cost implications")
 st.markdown("---")
 
 # Sidebar filters
 with st.sidebar:
-    st.markdown("## 🔍 Filters")
+    st.markdown("##  Filters")
     
     # Staffing model filter
     staffing_models = st.multiselect(
@@ -35,7 +35,7 @@ with st.sidebar:
     st.markdown("---")
     
     # Time period
-    st.markdown("### 📅 Time Period")
+    st.markdown("###  Time Period")
     months_back = st.slider("Months of data", 1, 12, 6)
 
 # Build query
@@ -77,7 +77,7 @@ if df.empty:
 df['MONTH'] = pd.to_datetime(df['MONTH'])
 
 # Summary metrics
-st.markdown("## 📊 Summary Metrics")
+st.markdown("##  Summary Metrics")
 col1, col2, col3, col4 = st.columns(4)
 
 with col1:
@@ -99,7 +99,7 @@ with col4:
 st.markdown("---")
 
 # Staffing model distribution
-st.markdown("### 📊 Staffing Model Distribution")
+st.markdown("###  Staffing Model Distribution")
 
 col_pie, col_bar = st.columns(2)
 
@@ -162,7 +162,7 @@ with col_bar:
 st.markdown("---")
 
 # Employee vs Contractor percentage trends
-st.markdown("### 📈 Employee vs Contractor Trends")
+st.markdown("###  Employee vs Contractor Trends")
 
 monthly_avg = df.groupby('MONTH').agg({
     'EMPLOYEE_PCT': 'mean',
@@ -206,7 +206,7 @@ st.markdown("---")
 
 # State comparison (if All States selected)
 if selected_state == 'All States':
-    st.markdown("### 📍 State-Level Comparison")
+    st.markdown("###  State-Level Comparison")
     
     state_avg = df.groupby('STATE').agg({
         'EMPLOYEE_PCT': 'mean',
@@ -251,7 +251,7 @@ if selected_state == 'All States':
 st.markdown("---")
 
 # Detailed breakdown by staffing model
-st.markdown("### 📊 Detailed Metrics by Staffing Model")
+st.markdown("###  Detailed Metrics by Staffing Model")
 
 model_stats = df.groupby('STAFFING_MODEL').agg({
     'FACILITY_ID': 'nunique',
@@ -283,7 +283,7 @@ st.markdown("---")
 col_top1, col_top2 = st.columns(2)
 
 with col_top1:
-    st.markdown("### 🔴 Most Contractor-Dependent")
+    st.markdown("###  Most Contractor-Dependent")
     latest_month = df['MONTH'].max()
     top_contractor = df[df['MONTH'] == latest_month].nlargest(10, 'CONTRACTOR_PCT')[
         ['FACILITY_NAME', 'STATE', 'CONTRACTOR_PCT', 'STAFFING_MODEL']
@@ -293,7 +293,7 @@ with col_top1:
     st.dataframe(top_contractor, hide_index=True, use_container_width=True)
 
 with col_top2:
-    st.markdown("### 🟢 Most Employee-Focused")
+    st.markdown("###  Most Employee-Focused")
     top_employee = df[df['MONTH'] == latest_month].nlargest(10, 'EMPLOYEE_PCT')[
         ['FACILITY_NAME', 'STATE', 'EMPLOYEE_PCT', 'STAFFING_MODEL']
     ]
@@ -303,7 +303,7 @@ with col_top2:
 
 # Cost implications
 st.markdown("---")
-st.markdown("### 💰 Cost Equivalent Analysis")
+st.markdown("###  Cost Equivalent Analysis")
 
 st.info("""
 **Cost Equivalent Hours** represents the employee-equivalent hours accounting for typical contractor premium rates.
@@ -341,7 +341,7 @@ st.plotly_chart(fig_cost, use_container_width=True)
 
 # Download option
 st.markdown("---")
-st.markdown("### 💾 Export Data")
+st.markdown("###  Export Data")
 csv = df.to_csv(index=False)
 st.download_button(
     label="Download Workforce Mix Data as CSV",
