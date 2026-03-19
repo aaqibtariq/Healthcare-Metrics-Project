@@ -16,7 +16,7 @@ st.markdown("### Monthly staffing ratios and state benchmark comparisons")
 st.markdown("---")
 
 with st.sidebar:
-    st.markdown("## 🔍 Filters")
+    st.markdown("##  Filters")
 
     states_df = run_query("""
         SELECT DISTINCT STATE
@@ -41,7 +41,7 @@ with st.sidebar:
     )
 
     st.markdown("---")
-    st.markdown("### 📅 Time Period")
+    st.markdown("###  Time Period")
     months_back = st.slider("Months of data", 1, 12, 6)
 
 query = f"""
@@ -111,7 +111,7 @@ st.markdown("---")
 col_left, col_right = st.columns(2)
 
 with col_left:
-    st.markdown("### 📊 Staffing Trends Over Time")
+    st.markdown("###  Staffing Trends Over Time")
 
     monthly_avg = df.groupby("MONTH", as_index=False).agg({
         "AVG_TOTAL_NURSING_HPRD": "mean",
@@ -154,7 +154,7 @@ with col_left:
     st.plotly_chart(fig_trend, use_container_width=True)
 
 with col_right:
-    st.markdown("### 🎯 Benchmark Performance Distribution")
+    st.markdown("###  Benchmark Performance Distribution")
 
     benchmark_counts = df["BENCHMARK_CATEGORY"].value_counts().reset_index()
     benchmark_counts.columns = ["Category", "Count"]
@@ -172,7 +172,7 @@ with col_right:
 st.markdown("---")
 
 if selected_state == "All States":
-    st.markdown("### 📍 State-Level Comparison")
+    st.markdown("###  State-Level Comparison")
 
     state_avg = df.groupby("STATE", as_index=False).agg({
         "AVG_TOTAL_NURSING_HPRD": "mean",
@@ -210,7 +210,7 @@ col_top, col_bottom = st.columns(2)
 latest_month = df["MONTH"].max()
 
 with col_top:
-    st.markdown("### 🏆 Top 10 Performers (Highest HPRD)")
+    st.markdown("###  Top 10 Performers (Highest HPRD)")
     top_10 = df[df["MONTH"] == latest_month].nlargest(10, "AVG_TOTAL_NURSING_HPRD")[
         ["FACILITY_NAME", "STATE", "AVG_TOTAL_NURSING_HPRD", "BENCHMARK_CATEGORY"]
     ].copy()
@@ -219,7 +219,7 @@ with col_top:
     st.dataframe(top_10, hide_index=True, use_container_width=True)
 
 with col_bottom:
-    st.markdown("### ⚠️ Bottom 10 Performers (Lowest HPRD)")
+    st.markdown("###  Bottom 10 Performers (Lowest HPRD)")
     bottom_10 = df[df["MONTH"] == latest_month].nsmallest(10, "AVG_TOTAL_NURSING_HPRD")[
         ["FACILITY_NAME", "STATE", "AVG_TOTAL_NURSING_HPRD", "BENCHMARK_CATEGORY"]
     ].copy()
@@ -228,7 +228,7 @@ with col_bottom:
     st.dataframe(bottom_10, hide_index=True, use_container_width=True)
 
 st.markdown("---")
-st.markdown("### 💾 Export Data")
+st.markdown("###  Export Data")
 
 csv = df.to_csv(index=False)
 st.download_button(
