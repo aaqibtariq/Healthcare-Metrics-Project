@@ -201,7 +201,7 @@ This architecture ensures scalability, modularity, security, and cost-efficient 
 - [Connection test code ](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/Google%20drive%20to%20AWS/Lambda%20Test%20code.md)
 - [Google Drive to S3 migration code](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/Google%20drive%20to%20AWS/Google%20drive%20to%20S3.md)
 - [Result of first time transfer and readding file to check incremental strategy ](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/Google%20drive%20to%20AWS/Results.md)
-- 
+  
 
 # Phase 3 - Storage & Event Processing
 
