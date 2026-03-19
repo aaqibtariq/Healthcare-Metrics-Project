@@ -198,7 +198,22 @@ healthcare_metrics/
 
 ## dbt TESTS
 
+Implemented multiple layers of data validation including not_null and unique tests for primary keys, accepted_values for standardizing categorical data, and relationship tests to enforce referential integrity between fact and dimension tables. Additionally, ensured data freshness and business rule validation to guarantee reliable analytics outputs.
 
+**DBT Tests Performed**
+
+- not_null
+- unique
+- accepted_values
+- relationships
+- primary key (not_null + unique)
+- dbt_expectations.expect_table_row_count_to_be_between
+- dbt_expectations.expect_column_values_to_be_between
+- freshness (source-level)
+
+## [Staging](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/All%20Phases/DBT/Staging/STAGING%20SCHEMA.md)
+
+## [Marts](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/All%20Phases/DBT/Marts/Schema.md)
 
 ##  DBT Pipeline Diagram
 
