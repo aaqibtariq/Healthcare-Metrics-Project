@@ -5,12 +5,12 @@ Interactive Streamlit dashboard visualizing metrics from 14,814 skilled nursing 
 ##  Dashboard Features
 
 ### Pages:
-1. ** Home** - Executive overview with key metrics and distributions
-2. ** Staffing Analytics** - Monthly staffing ratios vs state benchmarks (Metric 1)
-3. ** Quality Insights** - Staffing vs quality correlation analysis (Metric 3)
-4. ** Workforce Mix** - Employee vs contractor analysis (Metric 4)
-5. ** Risk Dashboard** - Multi-factor risk assessment (Metric 5)
-6. ** Facility Lookup** - Search and analyze individual facilities
+1. **Home** - Executive overview with key metrics and distributions
+2. **Staffing Analytics** - Monthly staffing ratios vs state benchmarks (Metric 1)
+3. **Quality Insights** - Staffing vs quality correlation analysis (Metric 3)
+4. **Workforce Mix** - Employee vs contractor analysis (Metric 4)
+5. **Risk Dashboard** - Multi-factor risk assessment (Metric 5)
+6. **Facility Lookup** - Search and analyze individual facilities
 
 **6 Complete Dashboard Pages:**
  **Home Page (streamlit_app.py)**
