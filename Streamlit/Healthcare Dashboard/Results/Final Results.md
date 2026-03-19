@@ -4,9 +4,31 @@ This project analyzes **14,814 skilled nursing facilities** with **3.3M+ records
 
 ---
 
+# Questions we had
+
+## QUESTIONS
+
+-  What is the relationship between nurse staffing levels and hospital occupancy rates? -> Yes
+-  Which hospitals have the highest overtime hours for nurses? -> Yes
+-  What are the average staffing levels by state and hospital type? -> Yes
+-  What trends can you identify in patient length of stay over time? -> Data doesn't exist
+
+
+
+## METRICS WE WILL CALCULATE (5 Core):
+
+-  Nurse-to-Patient Staffing Ratios
+-  Staffing vs Occupancy Correlation
+-  Staffing vs Quality (Readmissions)
+-  Employee vs Contractor
+-  High-Risk Facility Identification
+
+  
 #  Research Questions & Key Findings
 
-## 1️ Nurse Staffing vs Hospital Occupancy
+
+
+## 1️ What is the relationship between nurse staffing levels and hospital occupancy rates? -> Nurse Staffing vs Hospital Occupancy
 
 ###  Result: **Moderate Positive Correlation (r = 0.42)**
 
@@ -42,7 +64,7 @@ This project analyzes **14,814 skilled nursing facilities** with **3.3M+ records
 
 ---
 
-## 2️ Hospitals with Highest Overtime Usage
+## 2️ Which hospitals have the highest overtime hours for nurses? -> Hospitals with Highest Overtime Usage
 
 ###  Result: **Identified via Proxy Metrics**
 
@@ -77,9 +99,9 @@ This project analyzes **14,814 skilled nursing facilities** with **3.3M+ records
 
 ---
 
-## 3️ Staffing Levels by State & Facility Type
+## 3️ What are the average staffing levels by state and hospital type? -> Staffing Levels by State & Facility Type
 
-### 🇺🇸 State-Level Benchmarks
+### US State-Level Benchmarks
 
 **Top States (Highest Staffing)**
 - Alaska → 6.2 HPRD  
@@ -110,7 +132,7 @@ This project analyzes **14,814 skilled nursing facilities** with **3.3M+ records
 
 ---
 
-### 📏 By Facility Size
+###  By Facility Size
 
 | Size | Avg HPRD | Occupancy | Contractor % |
 |------|---------|----------|--------------|
@@ -123,7 +145,7 @@ This project analyzes **14,814 skilled nursing facilities** with **3.3M+ records
 
 ---
 
-### 🏥 By Provider Type
+###  By Provider Type
 
 | Type | Avg HPRD | Quality |
 |------|----------|--------|
@@ -139,7 +161,7 @@ This project analyzes **14,814 skilled nursing facilities** with **3.3M+ records
 
 ---
 
-## 4️ Patient Length of Stay (LOS)
+## 4️ What trends can you identify in patient length of stay over time? -> Patient Length of Stay (LOS)
 
 ###  Result: **Not Available**
 
