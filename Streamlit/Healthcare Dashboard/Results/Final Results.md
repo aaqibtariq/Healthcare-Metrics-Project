@@ -98,7 +98,7 @@ This project analyzes **14,814 skilled nursing facilities** with **3.3M+ records
 
 ---
 
-### 🏢 By Ownership Type
+###  By Ownership Type
 
 | Ownership | Avg HPRD | Occupancy | Quality |
 |----------|----------|----------|--------|
