@@ -176,12 +176,6 @@ This project analyzes **14,814 skilled nursing facilities** with **3.3M+ records
 - Readmission rates  
 - Short vs long stay indicators  
 
-###  Recommendation
-To answer LOS:
-- Medicare claims data  
-- Patient-level tracking  
-- Admission/discharge datasets  
-
 ---
 
 #  Core Metrics Analysis
