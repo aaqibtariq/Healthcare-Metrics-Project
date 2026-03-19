@@ -159,9 +159,9 @@ def log_file_to_dynamodb(file_metadata: dict):
                 "execution_id": file_metadata.get("execution_id", "")
             }
         )
-        print(f"✅ Logged file to DynamoDB: {file_metadata['file_name']}")
+        print(f" Logged file to DynamoDB: {file_metadata['file_name']}")
     except Exception as e:
-        print(f"⚠️ DynamoDB file log failed (continuing): {str(e)}")
+        print(f" DynamoDB file log failed (continuing): {str(e)}")
 
 
 def trigger_step_functions(load_dt: str, bucket: str, file_count: int):
@@ -169,7 +169,7 @@ def trigger_step_functions(load_dt: str, bucket: str, file_count: int):
     Trigger Step Functions state machine after files are uploaded.
     """
     if not STATE_MACHINE_ARN:
-        print("⚠️ STATE_MACHINE_ARN not configured - skipping Step Functions trigger")
+        print(" STATE_MACHINE_ARN not configured - skipping Step Functions trigger")
         return None
     
     try:
@@ -186,7 +186,7 @@ def trigger_step_functions(load_dt: str, bucket: str, file_count: int):
             })
         )
         
-        print(f"🚀 Triggered Step Functions: {execution_name}")
+        print(f" Triggered Step Functions: {execution_name}")
         print(f"   Execution ARN: {response['executionArn']}")
         
         return {
@@ -195,7 +195,7 @@ def trigger_step_functions(load_dt: str, bucket: str, file_count: int):
         }
         
     except Exception as e:
-        print(f"⚠️ Failed to trigger Step Functions (continuing): {str(e)}")
+        print(f" Failed to trigger Step Functions (continuing): {str(e)}")
         return None
 
 
@@ -223,9 +223,9 @@ def lambda_handler(event, context):
                 "file_list": []
             }
         )
-        print(f"🚀 Pipeline execution started: {execution_id}")
+        print(f" Pipeline execution started: {execution_id}")
     except Exception as e:
-        print(f"⚠️ Could not write execution START to DynamoDB (continuing): {str(e)}")
+        print(f" Could not write execution START to DynamoDB (continuing): {str(e)}")
 
     # --------- Existing pipeline logic ---------
     run_ts = utc_now_iso()
@@ -260,16 +260,16 @@ def lambda_handler(event, context):
             reasons[reason] += 1
 
             if not ok:
-                print(f"⏭️ Skipping unchanged: {name}")
+                print(f" Skipping unchanged: {name}")
                 skipped += 1
                 continue
 
-            print(f"🔄 Processing ({reason}): {name}")
+            print(f" Processing ({reason}): {name}")
             data = download_file(service, file_id)
 
             # Upload to S3
             s3_key, s3_uri = upload_to_s3(data, name, load_dt)
-            print(f"✅ Uploaded to {s3_uri}")
+            print(f" Uploaded to {s3_uri}")
 
             # Local checksum (optional)
             local_checksum = hashlib.md5(data).hexdigest()
@@ -305,7 +305,7 @@ def lambda_handler(event, context):
 
         # --------- TRIGGER STEP FUNCTIONS (NEW) ---------
         if copied > 0:
-            print(f"\n🎯 Triggering Step Functions orchestration for {copied} new/modified files...")
+            print(f"\n Triggering Step Functions orchestration for {copied} new/modified files...")
             stepfunctions_execution = trigger_step_functions(load_dt, S3_BUCKET, copied)
 
         # --------- Pipeline Execution Tracking (SUCCESS) ---------
@@ -322,9 +322,9 @@ def lambda_handler(event, context):
                     ":sf_exec": stepfunctions_execution or {}
                 }
             )
-            print(f"✅ Pipeline execution SUCCESS: {execution_id}")
+            print(f" Pipeline execution SUCCESS: {execution_id}")
         except Exception as e:
-            print(f"⚠️ Could not write execution SUCCESS to DynamoDB (continuing): {str(e)}")
+            print(f" Could not write execution SUCCESS to DynamoDB (continuing): {str(e)}")
 
         print(f"\nSUMMARY: copied={copied}, skipped={skipped}, reasons={reasons}")
         
@@ -354,9 +354,9 @@ def lambda_handler(event, context):
                     ":error": str(e),
                 }
             )
-            print(f"❌ Pipeline execution FAILED: {execution_id}")
+            print(f" Pipeline execution FAILED: {execution_id}")
         except Exception as ee:
-            print(f"⚠️ Could not write execution FAILED to DynamoDB: {str(ee)}")
+            print(f" Could not write execution FAILED to DynamoDB: {str(ee)}")
 
         print(f"Pipeline execution failed: {execution_id}, Error: {str(e)}")
         raise
