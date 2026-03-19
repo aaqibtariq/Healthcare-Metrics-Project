@@ -234,12 +234,17 @@ This dbt project transforms raw healthcare data from Snowflake into analytics-re
 
 
 
-- [Structure](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/Step%20Function/readme.md)
-- [Step Function](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/Step%20Function/step%20Function.md)
-- [Lambda Automation](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/Step%20Function/Lambda%20Automation.md)
-- [Updated Lambda Code Final Version](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/Step%20Function/lambda%20code.md)
+    -  [Structure](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/Step%20Function/readme.md)
+    -  [Step Function](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/Step%20Function/step%20Function.md)
+    -  [Lambda Automation](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/Step%20Function/Lambda%20Automation.md)
+    -  [Updated Lambda Code Final Version](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/Step%20Function/lambda%20code.md)
 
 # Phase 7 Streamlit
 
-- [Info](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/Streamlit/Healthcare%20Dashboard/README.md)
-- [Result](https://github.com/aaqibtariq/Healthcare-Metrics-Project/tree/main/Streamlit/Healthcare%20Dashboard/Results)
+
+- **Converts raw data into business insights**
+- **Enables real-time analytics from Snowflake**
+- **Provides interactive decision-making tool**
+
+    - [Info](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/Streamlit/Healthcare%20Dashboard/README.md)
+    - [Result](https://github.com/aaqibtariq/Healthcare-Metrics-Project/tree/main/Streamlit/Healthcare%20Dashboard/Results)
