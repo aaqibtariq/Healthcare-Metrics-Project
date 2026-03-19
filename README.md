@@ -222,3 +222,40 @@ This architecture ensures scalability, modularity, security, and cost-efficient 
 - [DBT](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/All%20Phases/DBT/Readme.md)
 
 
+# Phase 6 - Step Function
+
+- Automates pipeline orchestration
+- Handles failures gracefully
+- Improves reliability of data pipeline
+- Enables scalable and event-driven processing
+- Provides full visibility via CloudWatch
+
+```
+
+
+Google Drive (14,814 facility files)
+    ↓
+Lambda: healthcare-drive-to-s3-ingestion
+    ├─ Downloads from Google Drive
+    ├─ Uploads to S3
+    ├─ Logs to DynamoDB
+    └─  Triggers Step Functions
+        ↓
+Step Functions: healthcare-data-pipeline-orchestrator
+    ├─ DebounceCheck (waits for all files)
+    ├─ TriggerSnowpipe (signals ready)
+    ├─ CheckSnowpipeStatus (verifies)
+    └─ SendNotification (emails you)
+        ↓
+Snowflake: RAW.HEALTHCARE (8 tables)
+    ↓
+dbt Cloud: 16 models, 50 tests
+    ↓
+Streamlit Dashboard: 6 pages, 14,814 facilities
+
+
+```
+
+- [Step Function](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/Step%20Function/step%20Function.md)
+- [Lambda Automation](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/Step%20Function/Lambda%20Automation.md)
+- [Updated Lambda Code Final Version](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/Step%20Function/lambda%20code.md)
