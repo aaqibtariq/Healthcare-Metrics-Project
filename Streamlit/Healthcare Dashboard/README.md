@@ -5,12 +5,12 @@ Interactive Streamlit dashboard visualizing metrics from 14,814 skilled nursing 
 ##  Dashboard Features
 
 ### Pages:
-1. **[Home](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/Streamlit/Healthcare%20Dashboard/1_Staffing_Analytics.py)** - Executive overview with key metrics and distributions
-2. **Staffing Analytics** - Monthly staffing ratios vs state benchmarks (Metric 1)
-3. **Quality Insights** - Staffing vs quality correlation analysis (Metric 3)
-4. **Workforce Mix** - Employee vs contractor analysis (Metric 4)
-5. **Risk Dashboard** - Multi-factor risk assessment (Metric 5)
-6. **Facility Lookup** - Search and analyze individual facilities
+1. **[Home](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/Streamlit/Healthcare%20Dashboard/streamlit_app.py)** - Executive overview with key metrics and distributions
+2. **[Staffing Analytics](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/Streamlit/Healthcare%20Dashboard/1_Staffing_Analytics.py)** - Monthly staffing ratios vs state benchmarks (Metric 1)
+3. **[Quality Insights](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/Streamlit/Healthcare%20Dashboard/2_Quality_Insights.py)** - Staffing vs quality correlation analysis (Metric 3)
+4. **[Workforce Mix](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/Streamlit/Healthcare%20Dashboard/3_Workforce_Mix.py)** - Employee vs contractor analysis (Metric 4)
+5. **[Risk Dashboard](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/Streamlit/Healthcare%20Dashboard/4_Risk_Dashboard.py)** - Multi-factor risk assessment (Metric 5)
+6. **[Facility Lookup](https://github.com/aaqibtariq/Healthcare-Metrics-Project/blob/main/Streamlit/Healthcare%20Dashboard/5_Facility_Lookup.py)** - Search and analyze individual facilities
 
 **6 Complete Dashboard Pages:**
  **Home Page (streamlit_app.py)**
