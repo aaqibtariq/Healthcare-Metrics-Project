@@ -1,0 +1,203 @@
+{
+  "last_run": "2026-03-17T21:29:14.114743Z",
+  "files": {
+    "NH_QualityMsr_Claims_Oct2024.csv": {
+      "file_id": "1NhqUZ3FPpc81CMZjH8ZWqNOogloKYuYn",
+      "drive_modifiedTime": "2026-02-13T14:07:20.000Z",
+      "last_processed": "2026-02-25T17:04:14.727827Z",
+      "last_s3_key": "landing/google_drive/load_dt=2026-02-25/NH_QualityMsr_Claims_Oct2024.csv"
+    },
+    "NH_SurveySummary_Oct2024.csv": {
+      "file_id": "1krFmK-eszLbPKtUeDiE72jEvRjpf6IDP",
+      "drive_modifiedTime": "2026-02-13T14:07:19.000Z",
+      "last_processed": "2026-02-25T17:04:14.727827Z",
+      "last_s3_key": "landing/google_drive/load_dt=2026-02-25/NH_SurveySummary_Oct2024.csv"
+    },
+    "NH_Ownership_Oct2024.csv": {
+      "file_id": "1ZYCSQ-kzJYK1lzWn3bARPsoQvSZH9EJZ",
+      "drive_modifiedTime": "2026-02-13T14:07:19.000Z",
+      "last_processed": "2026-02-25T17:04:14.727827Z",
+      "last_s3_key": "landing/google_drive/load_dt=2026-02-25/NH_Ownership_Oct2024.csv"
+    },
+    "FY_2024_SNF_VBP_Facility_Performance.csv": {
+      "file_id": "1xd5kiFbqJAQvddHwPBASmm7ckzCWnn4D",
+      "drive_modifiedTime": "2026-02-13T14:07:18.000Z",
+      "last_processed": "2026-02-25T17:04:14.727827Z",
+      "last_s3_key": "landing/google_drive/load_dt=2026-02-25/FY_2024_SNF_VBP_Facility_Performance.csv"
+    },
+    "NH_Penalties_Oct2024.csv": {
+      "file_id": "1msIjQIkOgBT6jh4txCgNWvlZnyzCa5ab",
+      "drive_modifiedTime": "2026-02-13T14:07:17.000Z",
+      "last_processed": "2026-02-25T17:04:14.727827Z",
+      "last_s3_key": "landing/google_drive/load_dt=2026-02-25/NH_Penalties_Oct2024.csv"
+    },
+    "NH_ProviderInfo_Oct2024.csv": {
+      "file_id": "1q0HlZcTD5M7YX_N_m3ZMOpW_zMnZ1eeE",
+      "drive_modifiedTime": "2026-02-13T14:07:17.000Z",
+      "last_processed": "2026-02-25T17:04:14.727827Z",
+      "last_s3_key": "landing/google_drive/load_dt=2026-02-25/NH_ProviderInfo_Oct2024.csv"
+    },
+    "NH_StateUSAverages_Oct2024.csv": {
+      "file_id": "1JFrqijqYTIuWU8ZpwrQUNM3NwM7NgSIH",
+      "drive_modifiedTime": "2026-02-13T14:07:17.000Z",
+      "last_processed": "2026-02-25T17:04:14.727827Z",
+      "last_s3_key": "landing/google_drive/load_dt=2026-02-25/NH_StateUSAverages_Oct2024.csv"
+    },
+    "PBJ_Daily_Nurse_Staffing_Q2_2024.csv": {
+      "file_id": "1uBZ_85epp7Eope3xUgBx2XDkyg_TnWdT",
+      "drive_modifiedTime": "2026-02-13T14:06:20.000Z",
+      "last_processed": "2026-02-25T17:04:14.727827Z",
+      "last_s3_key": "landing/google_drive/load_dt=2026-02-25/PBJ_Daily_Nurse_Staffing_Q2_2024.csv"
+    },
+    "NH_StateUSAverages_Nov2024.csv": {
+      "file_id": "1goFYwhfq53NyqKhx6-JZDurj_IkWP5Yv",
+      "drive_modifiedTime": "2026-03-16T16:58:17.000Z",
+      "last_processed": "2026-03-16T17:11:34.568491Z",
+      "last_s3_key": "landing/google_drive/load_dt=2026-03-16/NH_StateUSAverages_Nov2024.csv"
+    },
+    "NH_Penalties_Nov2024.csv": {
+      "file_id": "1qkTmXJ5T79xHG2n8Tc9IrvyO-WJSlV61",
+      "drive_modifiedTime": "2026-03-16T17:22:23.000Z",
+      "last_processed": "2026-03-16T17:24:54.767089Z",
+      "last_s3_key": "landing/google_drive/load_dt=2026-03-16/NH_Penalties_Nov2024.csv"
+    },
+    "NH_ProviderInfo_Nov2024.csv": {
+      "file_id": "1p1uU7nRgHTUyyeTQg62Zl2NSAdUT_Ek2",
+      "drive_modifiedTime": "2026-03-16T18:00:18.000Z",
+      "last_processed": "2026-03-16T18:01:16.532239Z",
+      "last_s3_key": "landing/google_drive/load_dt=2026-03-16/NH_ProviderInfo_Nov2024.csv"
+    },
+    "PBJ_Daily_Nurse_Staffing_Q2_2025.csv": {
+      "file_id": "1Eh9g7SVzjP_riO0a-USmxRwSqVckWFaL",
+      "drive_modifiedTime": "2026-03-16T19:20:21.000Z",
+      "last_processed": "2026-03-16T19:25:07.108932Z",
+      "last_s3_key": "landing/google_drive/load_dt=2026-03-16/PBJ_Daily_Nurse_Staffing_Q2_2025.csv"
+    },
+    "NH_SurveySummary_Oct2025.csv": {
+      "file_id": "14TL9adhxxBIkeanN53zWYccTbSYua6BJ",
+      "drive_modifiedTime": "2026-03-16T19:20:13.000Z",
+      "last_processed": "2026-03-16T19:25:07.108932Z",
+      "last_s3_key": "landing/google_drive/load_dt=2026-03-16/NH_SurveySummary_Oct2025.csv"
+    },
+    "NH_QualityMsr_Claims_Oct2025.csv": {
+      "file_id": "1BQER-L5JB-4Gaks5yQV75gPEJ63dY9eZ",
+      "drive_modifiedTime": "2026-03-16T19:20:09.000Z",
+      "last_processed": "2026-03-16T19:25:07.108932Z",
+      "last_s3_key": "landing/google_drive/load_dt=2026-03-16/NH_QualityMsr_Claims_Oct2025.csv"
+    },
+    "NH_Ownership_Oct2025.csv": {
+      "file_id": "19NaZ-l_9Uc30sZkPTvBH1P1GNJqxUu6G",
+      "drive_modifiedTime": "2026-03-16T19:20:05.000Z",
+      "last_processed": "2026-03-16T19:25:07.108932Z",
+      "last_s3_key": "landing/google_drive/load_dt=2026-03-16/NH_Ownership_Oct2025.csv"
+    },
+    "NH_SurveySummary_dec2025.csv": {
+      "file_id": "1CrPTxI9EavpZ2kIGzWUYvXZMboOczaRA",
+      "drive_modifiedTime": "2026-03-16T19:20:13.000Z",
+      "last_processed": "2026-03-16T19:32:50.081913Z",
+      "last_s3_key": "landing/google_drive/load_dt=2026-03-16/NH_SurveySummary_dec2025.csv"
+    },
+    "PBJ_Daily_Nurse_Staffing_Q2_2026.csv": {
+      "file_id": "1R5wMPp4nU1WGYYflbl56auh5LBcmKTR6",
+      "drive_modifiedTime": "2026-03-16T19:39:00.000Z",
+      "last_processed": "2026-03-16T19:44:30.652646Z",
+      "last_s3_key": "landing/google_drive/load_dt=2026-03-16/PBJ_Daily_Nurse_Staffing_Q2_2026.csv"
+    },
+    "NH_SurveySummary_Jan2026.csv": {
+      "file_id": "1BX7MunSf3gwTtNR3WDLKI3ri6kyUbzbm",
+      "drive_modifiedTime": "2026-03-16T19:38:50.000Z",
+      "last_processed": "2026-03-16T19:44:30.652646Z",
+      "last_s3_key": "landing/google_drive/load_dt=2026-03-16/NH_SurveySummary_Jan2026.csv"
+    },
+    "NH_StateUSAverages_Jan2026.csv": {
+      "file_id": "1Kp_oqgBnAGxYXtOuMWUM1sdygyi2DT44",
+      "drive_modifiedTime": "2026-03-16T19:38:47.000Z",
+      "last_processed": "2026-03-16T19:44:30.652646Z",
+      "last_s3_key": "landing/google_drive/load_dt=2026-03-16/NH_StateUSAverages_Jan2026.csv"
+    },
+    "NH_QualityMsr_Claims_Jan2026.csv": {
+      "file_id": "1jHC1VdTx-iSCl-Rbpf9My7lSUPxUULop",
+      "drive_modifiedTime": "2026-03-16T19:38:45.000Z",
+      "last_processed": "2026-03-16T19:44:30.652646Z",
+      "last_s3_key": "landing/google_drive/load_dt=2026-03-16/NH_QualityMsr_Claims_Jan2026.csv"
+    },
+    "NH_ProviderInfo_Jan2026.csv": {
+      "file_id": "18JAcw7QCbykDEh2ZKE5m7Z3oyf_qmslP",
+      "drive_modifiedTime": "2026-03-16T19:38:42.000Z",
+      "last_processed": "2026-03-16T19:44:30.652646Z",
+      "last_s3_key": "landing/google_drive/load_dt=2026-03-16/NH_ProviderInfo_Jan2026.csv"
+    },
+    "NH_Penalties_Jan2026.csv": {
+      "file_id": "14BxtxrJW16Cy_HAGy3u821zcGxOcmPg9",
+      "drive_modifiedTime": "2026-03-16T19:38:39.000Z",
+      "last_processed": "2026-03-16T19:44:30.652646Z",
+      "last_s3_key": "landing/google_drive/load_dt=2026-03-16/NH_Penalties_Jan2026.csv"
+    },
+    "NH_Ownership_Jan2026.csv": {
+      "file_id": "1s6dZnULlhjcZlm69UgaoYxgwgGZCLAqr",
+      "drive_modifiedTime": "2026-03-16T19:38:37.000Z",
+      "last_processed": "2026-03-16T19:44:30.652646Z",
+      "last_s3_key": "landing/google_drive/load_dt=2026-03-16/NH_Ownership_Jan2026.csv"
+    },
+    "FY_2026_SNF_VBP_Facility_Performance.csv": {
+      "file_id": "1jd4VBYj8JXBWllZYEobqfDaNr3hqzXUt",
+      "drive_modifiedTime": "2026-03-16T19:38:33.000Z",
+      "last_processed": "2026-03-16T19:44:30.652646Z",
+      "last_s3_key": "landing/google_drive/load_dt=2026-03-16/FY_2026_SNF_VBP_Facility_Performance.csv"
+    },
+    "NH_ProviderInfo_Feb2026.csv": {
+      "file_id": "1L0BvEHaEZEwhLZfsKj8zcBwvZ6WImngJ",
+      "drive_modifiedTime": "2026-03-16T19:38:42.000Z",
+      "last_processed": "2026-03-16T19:57:50.465795Z",
+      "last_s3_key": "landing/google_drive/load_dt=2026-03-16/NH_ProviderInfo_Feb2026.csv"
+    },
+    "PBJ_Daily_Nurse_Staffing_Q4_2026.csv": {
+      "file_id": "1jn-V_i1GkBrXiWyAk2bmSm6PJ0Rd7923",
+      "drive_modifiedTime": "2026-03-16T19:39:00.000Z",
+      "last_processed": "2026-03-17T21:29:14.114743Z",
+      "last_s3_key": "landing/google_drive/load_dt=2026-03-17/PBJ_Daily_Nurse_Staffing_Q4_2026.csv"
+    },
+    "NH_SurveySummary_March2026.csv": {
+      "file_id": "1hwULlcWYAW9osLqdhnTOyWkoitrHO8go",
+      "drive_modifiedTime": "2026-03-16T19:38:50.000Z",
+      "last_processed": "2026-03-17T21:29:14.114743Z",
+      "last_s3_key": "landing/google_drive/load_dt=2026-03-17/NH_SurveySummary_March2026.csv"
+    },
+    "NH_StateUSAverages_March2026.csv": {
+      "file_id": "1ildhkQy6m5le2H7B4XFKE1hOl8j2yBbi",
+      "drive_modifiedTime": "2026-03-16T19:38:47.000Z",
+      "last_processed": "2026-03-17T21:29:14.114743Z",
+      "last_s3_key": "landing/google_drive/load_dt=2026-03-17/NH_StateUSAverages_March2026.csv"
+    },
+    "NH_QualityMsr_Claims_March2026.csv": {
+      "file_id": "1mhvsWeN876hLgTZ-E3hQXaFlbXRtntIO",
+      "drive_modifiedTime": "2026-03-16T19:38:45.000Z",
+      "last_processed": "2026-03-17T21:29:14.114743Z",
+      "last_s3_key": "landing/google_drive/load_dt=2026-03-17/NH_QualityMsr_Claims_March2026.csv"
+    },
+    "NH_ProviderInfo_March2026.csv": {
+      "file_id": "1-wRcfokAuB4dLEYF-JVsKAcC6x6r3x7E",
+      "drive_modifiedTime": "2026-03-16T19:38:42.000Z",
+      "last_processed": "2026-03-17T21:29:14.114743Z",
+      "last_s3_key": "landing/google_drive/load_dt=2026-03-17/NH_ProviderInfo_March2026.csv"
+    },
+    "NH_Penalties_March2026.csv": {
+      "file_id": "14xFCtWicNpb4SNreMYvZtQgfX-SfqqDk",
+      "drive_modifiedTime": "2026-03-16T19:38:39.000Z",
+      "last_processed": "2026-03-17T21:29:14.114743Z",
+      "last_s3_key": "landing/google_drive/load_dt=2026-03-17/NH_Penalties_March2026.csv"
+    },
+    "NH_Ownership_March2026.csv": {
+      "file_id": "1cHKUvbD_OQ0PmzmmGSNXSlax9kPM3-0N",
+      "drive_modifiedTime": "2026-03-16T19:38:37.000Z",
+      "last_processed": "2026-03-17T21:29:14.114743Z",
+      "last_s3_key": "landing/google_drive/load_dt=2026-03-17/NH_Ownership_March2026.csv"
+    },
+    "FY_2027_SNF_VBP_Facility_Performance.csv": {
+      "file_id": "1xw1wLX6oFB6nHK2SwGLEwhuZU_bSiY1V",
+      "drive_modifiedTime": "2026-03-16T19:38:33.000Z",
+      "last_processed": "2026-03-17T21:29:14.114743Z",
+      "last_s3_key": "landing/google_drive/load_dt=2026-03-17/FY_2027_SNF_VBP_Facility_Performance.csv"
+    }
+  }
+}
